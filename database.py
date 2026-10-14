@@ -8,6 +8,15 @@ from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 DB_PATH = os.environ.get("VISUALNOTES_DB") or os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "visualnotes.db"
 )
+
+# Asegurar que exista la carpeta de la base de datos (p. ej. /app/data en Docker).
+try:
+    _db_dir = os.path.dirname(os.path.abspath(DB_PATH))
+    if _db_dir:
+        os.makedirs(_db_dir, exist_ok=True)
+except Exception:
+    pass
+
 DATABASE_URL = f"sqlite:///{DB_PATH}"
 
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})

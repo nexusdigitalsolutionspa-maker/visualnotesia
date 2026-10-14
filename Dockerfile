@@ -25,12 +25,11 @@ RUN useradd --create-home --shell /bin/bash appuser \
     && chown -R appuser:appuser /app
 USER appuser
 
-ENV VISUALNOTES_DB=/app/data/visualnotes.db \
-    PORT=8000
+ENV VISUALNOTES_DB=/app/data/visualnotes.db
 
 EXPOSE 8000
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
-    CMD curl -fsS http://127.0.0.1:8000/api/health || exit 1
+    CMD curl -fsS http://127.0.0.1:${PORT:-8000}/api/health || exit 1
 
 CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-8000}"]
