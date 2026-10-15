@@ -344,7 +344,7 @@
             <span id="current-note-model" class="pill-badge pill-emerald">Gemini AI</span>
           </div>
 
-          <div class="canvas-buttons-group">
+          <div class="canvas-buttons-group" id="mermaid-buttons-group">
             <button class="btn btn-secondary btn-icon-round" id="btn-zoom-in" title="Acercar (+)">
               <svg class="svg-icon" viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="8"/>
@@ -407,6 +407,9 @@
           </div>
           <textarea id="mermaid-code-editor" class="code-editor-box" spellcheck="false"></textarea>
         </div>
+
+        <!-- Mapa conceptual interactivo (grafo editable) -->
+        <div id="interactive-map-root" class="interactive-map-root" style="display: none;"></div>
 
         <!-- Área de renderizado del mapa conceptual -->
         <div class="canvas-viewport" id="diagram-viewport">
@@ -584,6 +587,18 @@
           </div>
         </div>
 
+        <!-- Cronología de fechas / etapas -->
+        <div id="res-timeline-wrap" style="margin-top: 2.5rem; display: none;">
+          <h3 class="study-box-title" style="margin-bottom: 1rem;">Línea de Tiempo</h3>
+          <ol id="res-timeline-list" class="timeline-list"></ol>
+        </div>
+
+        <!-- Tablas comparativas -->
+        <div id="res-tables-wrap" style="margin-top: 2.5rem; display: none;">
+          <h3 class="study-box-title" style="margin-bottom: 1rem;">Tablas Comparativas</h3>
+          <div id="res-tables-container" class="tables-container"></div>
+        </div>
+
       </div>
     </section>
 
@@ -742,6 +757,7 @@
   <!-- SCRIPTS DE LA APLICACIÓN -->
   <script src="/static/js/audio.js"></script>
   <script src="/static/js/diagram.js"></script>
+  <script src="/static/js/conceptmap.js"></script>
   <script src="/static/js/auth.js"></script>
   <script src="/static/js/app.js"></script>
 </body>

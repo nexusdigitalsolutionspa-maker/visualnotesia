@@ -32,6 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (vg && vg.classList.contains("active") && currentVisualResources.length) {
         renderVisualGuides(currentVisualResources);
       }
+      const cm = document.getElementById("view-concept-map");
+      if (cm && cm.classList.contains("active") && window.conceptMap) {
+        window.conceptMap.resize();
+      }
     }, 250);
   });
 });
@@ -66,6 +70,9 @@ let currentStudyData = null;
 // Últimos datos generados, para re-renderizar diagramas al mostrar su vista.
 let currentVisualResources = [];
 let currentMermaidCode = "";
+let currentMapData = null;
+let currentMapSources = [];
+let currentNoteId = null;
 
 
 // ========================================================
@@ -126,8 +133,8 @@ function setupSubnavNavigation() {
     if (viewKey === "visual-guides" && currentVisualResources.length) {
       renderVisualGuides(currentVisualResources);
     }
-    if (viewKey === "concept-map" && currentMermaidCode) {
-      diagram.render(currentMermaidCode);
+    if (viewKey === "concept-map") {
+      renderConceptMapView();
     }
 
     if (viewKey === "library") {
@@ -414,6 +421,22 @@ function populateResultsUI(aiData, savedNote) {
   // Guardar estado global para exportaciones
   currentStudyData = aiData;
   currentMermaidCode = aiData.mermaid_code || "";
+  currentNoteId = savedNote && savedNote.id ? savedNote.id : null;
+
+  // Mapa conceptual estructurado (grafo editable) si la IA lo entregó
+  if (Array.isArray(aiData.concepts) && aiData.concepts.length) {
+    currentMapData = { concepts: aiData.concepts, relations: aiData.relations || [] };
+  } else if (savedNote && savedNote.map_data && Array.isArray(savedNote.map_data.concepts) && savedNote.map_data.concepts.length) {
+    currentMapData = savedNote.map_data;
+  } else {
+    currentMapData = null;
+  }
+
+  // Fragmentos numerados del texto para vincular la evidencia de cada concepto.
+  // Se prefiere el texto original (transcripción) porque la evidencia suele ser literal.
+  currentMapSources = splitIntoFragments(
+    (aiData.transcription || "").trim() || (aiData.clean_text || aiData.cleanText || "")
+  );
 
   // Actualizar indicador superior
   const indicator = document.getElementById("current-note-indicator");
@@ -435,10 +458,12 @@ function populateResultsUI(aiData, savedNote) {
   if (modelBadge) modelBadge.textContent = `Modelo: ${model}`;
 
   if (aiData.mermaid_code) {
-    diagram.render(aiData.mermaid_code);
     const codeEditor = document.getElementById("mermaid-code-editor");
     if (codeEditor) codeEditor.value = aiData.mermaid_code;
   }
+
+  // Renderiza el mapa interactivo (o el diagrama Mermaid como respaldo)
+  renderConceptMapView();
 
   // 2. Vista de Guías Visuales y Esquemas Gráficos
   renderVisualGuides(aiData.visual_resources || []);
@@ -491,6 +516,10 @@ function populateResultsUI(aiData, savedNote) {
       quizContainer.appendChild(div);
     });
   }
+
+  // 4b. Cronología y tablas comparativas
+  renderTimeline(aiData.events || (savedNote && savedNote.map_data && savedNote.map_data.events) || []);
+  renderComparisonTables(aiData.tables || (savedNote && savedNote.map_data && savedNote.map_data.tables) || []);
 
   // 5. Vista de Transcripción, Descripción, Palabras Clave y Apuntes
   const descEl = document.getElementById("res-audio-description");
@@ -1004,6 +1033,158 @@ function renderWebResources(studyLinks) {
 }
 
 // ========================================================
+// MAPA CONCEPTUAL INTERACTIVO (grafo editable + persistencia)
+// ========================================================
+function renderConceptMapView() {
+  const intRoot = document.getElementById("interactive-map-root");
+  const viewport = document.getElementById("diagram-viewport");
+  const drawer = document.getElementById("editor-slide-drawer");
+  const mermaidBtns = document.getElementById("mermaid-buttons-group");
+
+  const hasGraph =
+    currentMapData &&
+    Array.isArray(currentMapData.concepts) &&
+    currentMapData.concepts.length > 0 &&
+    window.conceptMap;
+
+  if (hasGraph) {
+    if (intRoot) intRoot.style.display = "block";
+    if (viewport) viewport.style.display = "none";
+    if (drawer) drawer.style.display = "none";
+    if (mermaidBtns) mermaidBtns.style.display = "none";
+
+    window.conceptMap.render(intRoot, currentMapData, {
+      toast: showToast,
+      onSave: saveConceptMap,
+      onLocate: locateEvidenceInNotes,
+      getSources: () => currentMapSources
+    });
+    requestAnimationFrame(() => window.conceptMap.resize());
+  } else {
+    if (intRoot) intRoot.style.display = "none";
+    if (viewport) viewport.style.display = "";
+    if (mermaidBtns) mermaidBtns.style.display = "";
+    if (currentMermaidCode) diagram.render(currentMermaidCode);
+  }
+}
+
+async function saveConceptMap(data) {
+  if (!currentNoteId) {
+    showToast("Genera o carga un apunte para guardar el mapa.", "error");
+    return;
+  }
+  try {
+    const res = await fetch(`/api/notes/${currentNoteId}/map`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error("No se pudo guardar el mapa.");
+    const json = await res.json();
+    if (json.map_data) currentMapData = json.map_data;
+    if (currentStudyData) {
+      currentStudyData.concepts = currentMapData.concepts;
+      currentStudyData.relations = currentMapData.relations;
+    }
+    window.conceptMap.markSaved();
+    showToast("Mapa conceptual guardado.");
+  } catch (e) {
+    showToast(e.message || "No se pudo guardar el mapa.", "error");
+  }
+}
+
+// Divide el texto en fragmentos numerados (unidad de evidencia del mapa).
+function splitIntoFragments(text) {
+  const out = [];
+  if (!text || !text.trim()) return out;
+  text.split(/\n+/).forEach((block) => {
+    const clean = block.trim();
+    if (!clean) return;
+    clean.split(/(?<=[.!?…])\s+/).forEach((part) => {
+      const t = part.trim();
+      if (t) out.push({ index: out.length + 1, text: t });
+    });
+  });
+  return out;
+}
+
+// Resalta la evidencia de un concepto en el texto original del apunte.
+// Adoptado del enlace "Localizar en el texto" del prototipo del Grupo 4.
+function locateEvidenceInNotes(evidence) {
+  const data = currentStudyData || {};
+  const cleanText = data.clean_text || data.cleanText || "";
+  const transcription = data.transcription || "";
+  const needle = String(evidence || "").trim();
+
+  if (!cleanText.trim() && !transcription.trim()) {
+    showToast("No hay texto original disponible para este apunte.", "error");
+    return;
+  }
+
+  const cleanEl = document.getElementById("res-clean-text");
+  const transcriptionEl = document.getElementById("res-transcription-text");
+
+  if (cleanEl && cleanText) {
+    cleanEl.innerHTML = renderCleanTextHighlighted(
+      cleanText,
+      "Sin contenido ordenado disponible.",
+      needle
+    );
+  }
+  if (transcriptionEl && transcription) {
+    transcriptionEl.innerHTML = renderCleanTextHighlighted(
+      transcription,
+      "Sin transcripción disponible para este material.",
+      needle
+    );
+  }
+
+  window.navigateToView("transcription");
+
+  const mark = document.querySelector("#res-clean-text .evidence-mark, #res-transcription-text .evidence-mark");
+  if (mark) {
+    mark.scrollIntoView({ behavior: "smooth", block: "center" });
+    showToast("Fragmento resaltado en tus apuntes.");
+  } else {
+    showToast("Mostrando tus apuntes. No se halló el fragmento exacto.", "error");
+  }
+}
+
+function renderCleanTextHighlighted(text, emptyMessage, needle) {
+  if (!text || !text.trim()) return formatPlainText(text, emptyMessage);
+  const safe = escapeHtml(text);
+  let marked = safe;
+  if (needle && needle.trim()) {
+    const n = String(needle).trim();
+    const candidates = [n, n.slice(0, 60), n.slice(0, 40), n.slice(0, 25)].filter(
+      (c) => c.trim().length >= 8
+    );
+    const lower = text.toLowerCase();
+    for (const c of candidates) {
+      const idx = lower.indexOf(c.toLowerCase());
+      if (idx >= 0) {
+        const escIdx = escapeHtml(text.slice(0, idx)).length;
+        const escLen = escapeHtml(text.slice(idx, idx + c.length)).length;
+        marked =
+          safe.slice(0, escIdx) +
+          '<mark class="evidence-mark">' +
+          safe.slice(escIdx, escIdx + escLen) +
+          "</mark>" +
+          safe.slice(escIdx + escLen);
+        break;
+      }
+    }
+  }
+  return marked
+    .split(/\n{2,}/)
+    .map((block) => {
+      const content = block.trim().replace(/\n/g, "<br>");
+      return content ? `<p class="summary-paragraph">${content}</p>` : "";
+    })
+    .join("");
+}
+
+// ========================================================
 // CONTROLES DEL LIENZO DE MAPA CONCEPTUAL
 // ========================================================
 function setupDiagramControls() {
@@ -1152,6 +1333,91 @@ async function loadNotesList() {
   }
 }
 
+function renderTimeline(events) {
+  const wrap = document.getElementById("res-timeline-wrap");
+  const list = document.getElementById("res-timeline-list");
+  if (!wrap || !list) return;
+
+  const items = Array.isArray(events) ? events.filter((e) => e && (e.text || e.date)) : [];
+  if (!items.length) {
+    wrap.style.display = "none";
+    list.innerHTML = "";
+    return;
+  }
+
+  list.innerHTML = "";
+  items.forEach((ev) => {
+    const li = document.createElement("li");
+    li.className = "timeline-item";
+    const date = document.createElement("span");
+    date.className = "timeline-date";
+    date.textContent = ev.date ? ev.date : "•";
+    const text = document.createElement("span");
+    text.className = "timeline-text";
+    text.textContent = ev.text || "";
+    li.appendChild(date);
+    li.appendChild(text);
+    list.appendChild(li);
+  });
+  wrap.style.display = "block";
+}
+
+function renderComparisonTables(tables) {
+  const wrap = document.getElementById("res-tables-wrap");
+  const container = document.getElementById("res-tables-container");
+  if (!wrap || !container) return;
+
+  const list = Array.isArray(tables) ? tables.filter((t) => t && Array.isArray(t.headers) && Array.isArray(t.rows)) : [];
+  if (!list.length) {
+    wrap.style.display = "none";
+    container.innerHTML = "";
+    return;
+  }
+
+  container.innerHTML = "";
+  list.forEach((table) => {
+    const block = document.createElement("div");
+    block.className = "table-block";
+
+    const heading = document.createElement("h4");
+    heading.className = "table-block-title";
+    heading.textContent = table.title || "Comparación";
+    block.appendChild(heading);
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "table-scroll";
+    const el = document.createElement("table");
+    el.className = "comparison-table";
+
+    const thead = document.createElement("thead");
+    const headRow = document.createElement("tr");
+    table.headers.forEach((h) => {
+      const th = document.createElement("th");
+      th.textContent = h;
+      headRow.appendChild(th);
+    });
+    thead.appendChild(headRow);
+    el.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+    table.rows.forEach((row) => {
+      const tr = document.createElement("tr");
+      row.forEach((cell) => {
+        const td = document.createElement("td");
+        td.textContent = cell;
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    el.appendChild(tbody);
+
+    wrapper.appendChild(el);
+    block.appendChild(wrapper);
+    container.appendChild(block);
+  });
+  wrap.style.display = "block";
+}
+
 function loadNoteIntoViewer(note) {
   populateResultsUI({
     title: note.title,
@@ -1168,6 +1434,8 @@ function loadNoteIntoViewer(note) {
     visual_resources: note.visual_resources || [],
     study_links: note.study_links || {},
     markdown_doc: note.markdown_doc || "",
+    events: (note.map_data && note.map_data.events) || [],
+    tables: (note.map_data && note.map_data.tables) || [],
     used_model: "Base de Datos SQLite"
   }, note);
 

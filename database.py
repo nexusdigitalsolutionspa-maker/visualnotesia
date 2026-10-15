@@ -65,6 +65,7 @@ class Note(Base):
     quiz_json = Column(Text, default="[]")
     study_links_json = Column(Text, default="{}")
     visual_resources_json = Column(Text, default="[]")
+    map_json = Column(Text, default="{}")
     markdown_doc = Column(Text, default="")
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
 
@@ -91,6 +92,20 @@ class Note(Base):
             visual_resources = json.loads(self.visual_resources_json) if self.visual_resources_json else []
         except Exception:
             visual_resources = []
+        try:
+            map_data = json.loads(self.map_json) if self.map_json else {}
+            if not isinstance(map_data, dict):
+                map_data = {}
+        except Exception:
+            map_data = {}
+        if not isinstance(map_data.get("concepts"), list):
+            map_data["concepts"] = []
+        if not isinstance(map_data.get("relations"), list):
+            map_data["relations"] = []
+        if not isinstance(map_data.get("events"), list):
+            map_data["events"] = []
+        if not isinstance(map_data.get("tables"), list):
+            map_data["tables"] = []
 
         return {
             "id": self.id,
@@ -109,6 +124,7 @@ class Note(Base):
             "quiz": quiz,
             "study_links": study_links,
             "visual_resources": visual_resources,
+            "map_data": map_data,
             "markdown_doc": self.markdown_doc or "",
             "created_at": self.created_at.strftime("%Y-%m-%d %H:%M") if self.created_at else ""
         }
@@ -135,6 +151,11 @@ def init_db():
             pass
         try:
             conn.execute(text("ALTER TABLE notes ADD COLUMN visual_resources_json TEXT DEFAULT '[]'"))
+            conn.commit()
+        except Exception:
+            pass
+        try:
+            conn.execute(text("ALTER TABLE notes ADD COLUMN map_json TEXT DEFAULT '{}'"))
             conn.commit()
         except Exception:
             pass

@@ -41,7 +41,8 @@ Tu objetivo es procesar notas de clase (desde audio, imágenes de pizarra/apunte
 3. Versión limpia y ordenada del contenido: elimina muletillas, repeticiones, ruido y frases inconexas, y organiza las ideas por temas.
 4. Síntesis pedagógica, apuntes estructurados y puntos clave.
 5. Palabras clave para búsqueda y repaso.
-6. Un Mapa Conceptual estructurado en sintaxis Mermaid.
+6. Un Mapa Conceptual: el mismo mapa entregado por partida doble: (a) en sintaxis Mermaid y (b) como datos estructurados ('concepts' y 'relations') para poder editarlo de forma interactiva.
+6b. Una cronología ('events') cuando el material mencione fechas, etapas o una secuencia temporal, y tablas comparativas ('tables') cuando haya elementos que convenga contrastar.
 7. Preguntas de autoevaluación (quiz con respuestas).
 8. Ayudas visuales y modelos mentales conceptuales explicativos.
 9. Enlaces y recursos recomendados de estudio (videos de YouTube reales y relevantes, documentación web oficial y artículos de blogs universitarios de referencia).
@@ -64,6 +65,26 @@ Debes responder SIEMPRE con un objeto JSON estrictamente válido que contenga ex
   ],
   "notes": "Apuntes estructurados en formato Markdown (usa ##, ###, listas y negritas) que organicen el tema en secciones, definiciones, fórmulas, ejemplos y aclaraciones del profesor.",
   "mermaid_code": "Código Mermaid válido que represente el mapa conceptual. Usa preferentemente 'flowchart TD' o 'graph TD'. Envolver SIEMPRE los textos de cada nodo en comillas dobles ej: A[\"Concepto Central\"] --> B[\"Subtema\"]. No uses caracteres reservados dentro de los nodos sin escapar.",
+  "concepts": [
+    {"id": "c1", "label": "Concepto clave 1 (máx. 70 caracteres)", "description": "Explicación breve de 1-2 frases sobre el concepto.", "importance": 1, "evidence": "Frase textual corta tomada del material donde aparece el concepto"},
+    {"id": "c2", "label": "Concepto clave 2", "description": "Explicación breve de 1-2 frases.", "importance": 2, "evidence": "Otra frase textual corta del material"}
+  ],
+  "relations": [
+    {"from": "c1", "to": "c2", "label": "tipo de relación breve (ej. 'se compone de', 'depende de', 'causa')"}
+  ],
+  "events": [
+    {"date": "1947", "text": "Descripción breve de lo ocurrido en esa fecha o etapa"}
+  ],
+  "tables": [
+    {
+      "title": "Título comparativo (ej. 'Comparación de enfoques')",
+      "headers": ["Criterio", "Opción A", "Opción B"],
+      "rows": [
+        ["Qué es", "Descripción A", "Descripción B"],
+        ["Cuándo se usa", "Caso A", "Caso B"]
+      ]
+    }
+  ],
   "key_points": [
     "Definición o principio fundamental 1",
     "Definición o principio fundamental 2",
@@ -163,6 +184,113 @@ def clean_mermaid_code(code: str) -> str:
         code = "flowchart TD\n" + code
         
     return code
+
+def normalize_concept_map(concepts: Any, relations: Any) -> tuple:
+    """Normaliza el mapa conceptual estructurado devuelto por la IA.
+
+    Garantiza identificadores válidos, longitudes razonables e integridad
+    referencial entre conceptos y relaciones para poder dibujar un grafo.
+    """
+    clean_concepts = []
+    ids = []
+    raw_concepts = concepts if isinstance(concepts, list) else []
+    for index, concept in enumerate(raw_concepts[:24]):
+        if not isinstance(concept, dict):
+            continue
+        label = str(concept.get("label", "") or "").strip()
+        if not label:
+            continue
+        cid = str(concept.get("id", "") or "").strip() or f"c{index + 1}"
+        if cid in ids:
+            cid = f"{cid}-{index + 1}"
+        try:
+            importance = int(concept.get("importance", 2))
+        except Exception:
+            importance = 2
+        importance = max(1, min(3, importance))
+        clean_concepts.append({
+            "id": cid,
+            "label": label[:70],
+            "description": str(concept.get("description", "") or "")[:400],
+            "importance": importance,
+            "evidence": str(concept.get("evidence", "") or "")[:400],
+        })
+        ids.append(cid)
+
+    id_set = set(ids)
+    clean_relations = []
+    seen = set()
+    raw_relations = relations if isinstance(relations, list) else []
+    for relation in raw_relations[:60]:
+        if not isinstance(relation, dict):
+            continue
+        source = str(relation.get("from", "") or "").strip()
+        target = str(relation.get("to", "") or "").strip()
+        if source not in id_set or target not in id_set or source == target:
+            continue
+        key = tuple(sorted((source, target)))
+        if key in seen:
+            continue
+        seen.add(key)
+        clean_relations.append({
+            "from": source,
+            "to": target,
+            "label": str(relation.get("label", "") or "").strip()[:60],
+        })
+
+    return clean_concepts, clean_relations
+
+
+def normalize_events(events: Any) -> list:
+    """Normaliza la cronología de fechas/etapas devuelta por la IA."""
+    clean_events = []
+    raw = events if isinstance(events, list) else []
+    for event in raw[:30]:
+        if not isinstance(event, dict):
+            continue
+        text = str(event.get("text", "") or "").strip()
+        if not text:
+            continue
+        clean_events.append({
+            "date": str(event.get("date", "") or "").strip()[:40],
+            "text": text[:400],
+        })
+    return clean_events
+
+
+def normalize_tables(tables: Any) -> list:
+    """Normaliza las tablas comparativas devueltas por la IA."""
+    clean_tables = []
+    raw = tables if isinstance(tables, list) else []
+    for table in raw[:6]:
+        if not isinstance(table, dict):
+            continue
+        headers = table.get("headers", [])
+        if not isinstance(headers, list):
+            continue
+        headers = [str(h or "").strip()[:80] for h in headers[:6]]
+        if len(headers) < 2:
+            continue
+        rows = []
+        raw_rows = table.get("rows", [])
+        if isinstance(raw_rows, list):
+            for row in raw_rows[:20]:
+                if not isinstance(row, list):
+                    continue
+                cells = [str(c or "").strip()[:200] for c in row[:len(headers)]]
+                while len(cells) < len(headers):
+                    cells.append("")
+                if any(cells):
+                    rows.append(cells)
+        if not rows:
+            continue
+        clean_tables.append({
+            "title": str(table.get("title", "") or "Comparación").strip()[:100],
+            "headers": headers,
+            "rows": rows,
+        })
+    return clean_tables
+
 
 def format_study_links(study_links: Optional[Dict[str, Any]], title: str) -> Dict[str, Any]:
     """Asegura URLs válidas y funcionales para YouTube, sitios y blogs."""
@@ -413,6 +541,14 @@ def analyze_material(
                 parsed["mermaid_code"] = clean_mermaid_code(parsed.get("mermaid_code", ""))
                 parsed["study_links"] = format_study_links(parsed.get("study_links"), parsed.get("title", "Apunte Universitario"))
 
+                # Mapa conceptual estructurado (nodos y relaciones editables).
+                parsed["concepts"], parsed["relations"] = normalize_concept_map(
+                    parsed.get("concepts"), parsed.get("relations")
+                )
+                # Cronología de fechas y tablas comparativas.
+                parsed["events"] = normalize_events(parsed.get("events"))
+                parsed["tables"] = normalize_tables(parsed.get("tables"))
+
                 # Normalizar campos nuevos
                 if not isinstance(parsed.get("keywords"), list):
                     parsed["keywords"] = []
@@ -448,6 +584,19 @@ def analyze_material(
         "keywords": ["apunte", "clase", "conceptos"],
         "notes": "1. Revisión de los contenidos impartidos durante la cátedra.\n2. Identificación de los conceptos esenciales para el estudio.",
         "mermaid_code": "flowchart TD\n  A[\"Apunte de Clase\"] --> B[\"Conceptos Principales\"]\n  A --> C[\"Aplicaciones Prácticas\"]\n  B --> D[\"Definición 1\"]\n  B --> E[\"Definición 2\"]\n  C --> F[\"Casos de Estudio\"]",
+        "concepts": [
+            {"id": "c1", "label": "Apunte de Clase", "description": "Tema central abordado en el material.", "importance": 1, "evidence": ""},
+            {"id": "c2", "label": "Conceptos Principales", "description": "Definiciones y principios clave del tema.", "importance": 1, "evidence": ""},
+            {"id": "c3", "label": "Aplicaciones Prácticas", "description": "Usos y ejemplos del contenido.", "importance": 2, "evidence": ""},
+            {"id": "c4", "label": "Casos de Estudio", "description": "Situaciones reales para repasar.", "importance": 3, "evidence": ""}
+        ],
+        "relations": [
+            {"from": "c1", "to": "c2", "label": "incluye"},
+            {"from": "c1", "to": "c3", "label": "se aplica en"},
+            {"from": "c2", "to": "c3", "label": "se ejemplifica en"}
+        ],
+        "events": [],
+        "tables": [],
         "key_points": [
             "Revisión de contenidos impartidos durante la cátedra.",
             "Conceptos esenciales extraídos para estudio activo."

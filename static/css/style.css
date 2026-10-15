@@ -1106,6 +1106,110 @@ body {
 }
 
 /* ========================================================
+   LÍNEA DE TIEMPO Y TABLAS COMPARATIVAS
+======================================================== */
+.timeline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 0.25rem;
+  position: relative;
+}
+
+.timeline-list::before {
+  content: "";
+  position: absolute;
+  left: 0.72rem;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  width: 2px;
+  background: var(--border-default);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  padding: 0.35rem 0 0.9rem 2rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0.32rem;
+  top: 0.55rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.timeline-date {
+  flex: 0 0 auto;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--primary);
+  min-width: 3.5rem;
+  padding-top: 0.05rem;
+}
+
+.timeline-text {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+}
+
+.tables-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.table-block-title {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 0.65rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 0.7rem 0.95rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.comparison-table th {
+  background-color: #f8fafc;
+  font-weight: 800;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table tbody tr:nth-child(even) td {
+  background-color: #fcfdfe;
+}
+
+/* ========================================================
    RECURSOS Y ENLACES (YOUTUBE, SITIOS, BLOGS)
 ======================================================== */
 .resource-block {
@@ -1347,4 +1451,301 @@ body {
   stroke-linejoin: round;
   display: inline-block;
   vertical-align: middle;
+}
+
+/* ========================================================
+   MAPA CONCEPTUAL INTERACTIVO (GRAFO EDITABLE)
+   Editor adaptado del prototipo VisualNotes v0.3 - Grupo 4
+======================================================== */
+.interactive-map-root {
+  width: 100%;
+}
+
+.cm-root {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.cm-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-default);
+  background-color: #fafbfc;
+}
+
+.cm-toolbar-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.cm-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cm-stage {
+  position: relative;
+  flex: 1;
+  min-height: 540px;
+  background-color: #ffffff;
+  background-image: radial-gradient(circle, #cbd5e1 1.25px, transparent 1.25px);
+  background-size: 26px 26px;
+}
+
+.cm-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.cm-svg:active {
+  cursor: grabbing;
+}
+
+.cm-edge {
+  stroke: #94a3b8;
+  marker-end: url(#cm-arrow);
+  transition: opacity 0.2s ease;
+}
+
+.cm-edge-wrapper.manual .cm-edge {
+  stroke: #f59e0b;
+  stroke-dasharray: 5 4;
+}
+
+.cm-edge-wrapper.dim {
+  opacity: 0.18;
+}
+
+.cm-edge-label {
+  fill: #64748b;
+  font-size: 11px;
+  font-weight: 500;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.cm-node {
+  cursor: pointer;
+}
+
+.cm-node rect {
+  stroke: rgba(15, 23, 42, 0.08);
+  stroke-width: 1;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.cm-node.t0 rect { fill: #4f46e5; }
+.cm-node.t1 rect { fill: #0ea5e9; }
+.cm-node.t2 rect { fill: #64748b; }
+.cm-node.manual rect { stroke: #f59e0b; stroke-width: 2; stroke-dasharray: 4 3; }
+
+.cm-node text {
+  fill: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
+
+.cm-node.t0 text {
+  font-size: 14px;
+}
+
+.cm-node:hover rect { filter: brightness(1.08); }
+.cm-node:focus { outline: none; }
+.cm-node:focus rect { stroke: #0f172a; stroke-width: 2; }
+.cm-node.sel rect { stroke: #0f172a; stroke-width: 2.5; filter: drop-shadow(0 6px 14px rgba(15, 23, 42, 0.28)); }
+.cm-node.dim { opacity: 0.28; }
+.cm-node.linking rect { animation: cm-pulse 1s ease-in-out infinite; }
+
+@keyframes cm-pulse {
+  0%, 100% { stroke: #f59e0b; stroke-width: 2; }
+  50% { stroke: #f59e0b; stroke-width: 5; }
+}
+
+.cm-hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.75rem;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  padding: 0 1rem;
+  pointer-events: none;
+}
+
+.cm-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--border-default);
+  background-color: #fafbfc;
+}
+
+.cm-edit-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cm-edit-row input[type="text"],
+.cm-edit-row select {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-family: inherit;
+  background-color: #ffffff;
+  color: var(--text-primary);
+}
+
+.cm-inline-label {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.cm-detail {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border-default);
+  background-color: #ffffff;
+}
+
+.cm-detail h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.cm-desc {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.cm-evidence {
+  margin: 0.75rem 0 0;
+  padding: 0.65rem 0.9rem;
+  border-left: 3px solid var(--primary);
+  background-color: var(--primary-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.cm-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.cm-chip,
+.cm-list-btn {
+  border: 1px solid var(--primary-border);
+  background-color: var(--primary-subtle);
+  color: var(--primary);
+  border-radius: var(--radius-full);
+  padding: 0.28rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.cm-chip:hover,
+.cm-list-btn:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.cm-frag-label {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.cm-chip.cm-frag {
+  border-style: dashed;
+}
+
+.cm-list {
+  border-top: 1px solid var(--border-default);
+  padding: 0.75rem 1.25rem 1rem;
+  font-size: 0.85rem;
+}
+
+.cm-list summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.cm-list-body {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.cm-list-body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.btn.danger {
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.evidence-mark {
+  background-color: #fde68a;
+  color: #78350f;
+  border-radius: 3px;
+  padding: 0.05rem 0.2rem;
+  box-shadow: 0 0 0 2px rgba(253, 230, 138, 0.5);
+}
+
+@media (max-width: 640px) {
+  .cm-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cm-stage,
+  .cm-svg {
+    min-height: 420px;
+  }
 }

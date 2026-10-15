@@ -5,7 +5,7 @@ import logging
 import secrets
 from collections import defaultdict
 from typing import Optional
-from fastapi import FastAPI, Depends, HTTPException, UploadFile, File, Form, Request
+from fastapi import Body, FastAPI, Depends, HTTPException, UploadFile, File, Form, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
@@ -354,6 +354,12 @@ async def process_study_material(
             quiz_json=json.dumps(ai_result.get("quiz", [])),
             study_links_json=json.dumps(ai_result.get("study_links", {})),
             visual_resources_json=json.dumps(ai_result.get("visual_resources", [])),
+            map_json=json.dumps({
+                "concepts": ai_result.get("concepts", []),
+                "relations": ai_result.get("relations", []),
+                "events": ai_result.get("events", []),
+                "tables": ai_result.get("tables", [])
+            }),
             markdown_doc=ai_result.get("markdown_doc", "")
         )
         db.add(new_note)
@@ -428,6 +434,38 @@ async def update_note(
     db.commit()
     db.refresh(note)
     return {"success": True, "note": note.to_dict()}
+
+@app.put("/api/notes/{note_id}/map")
+async def update_note_map(
+    note_id: int,
+    payload: dict = Body(...),
+    db: Session = Depends(get_db)
+):
+    """Guarda el mapa conceptual editado (conceptos y relaciones) de un apunte."""
+    note = db.query(Note).filter(Note.id == note_id).first()
+    if not note:
+        raise HTTPException(status_code=404, detail="Apunte no encontrado.")
+
+    concepts, relations = gemini_service.normalize_concept_map(
+        payload.get("concepts"), payload.get("relations")
+    )
+    existing = {}
+    try:
+        existing = json.loads(note.map_json) if note.map_json else {}
+        if not isinstance(existing, dict):
+            existing = {}
+    except (ValueError, TypeError):
+        existing = {}
+    note.map_json = json.dumps({
+        "concepts": concepts,
+        "relations": relations,
+        "events": existing.get("events", []),
+        "tables": existing.get("tables", [])
+    })
+    db.commit()
+    db.refresh(note)
+    return {"success": True, "map_data": note.to_dict().get("map_data")}
+
 
 @app.delete("/api/notes/{note_id}")
 async def delete_note(note_id: int, db: Session = Depends(get_db)):
