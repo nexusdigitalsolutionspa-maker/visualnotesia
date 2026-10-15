@@ -174,22 +174,29 @@ ensure_seed_data()
 # RUTAS DE PÁGINA PRINCIPAL
 # ==========================================================
 @app.get("/", response_class=HTMLResponse)
-async def serve_index():
-    index_path = os.path.join(TEMPLATES_DIR, "index.html")
-    if os.path.exists(index_path):
-        with open(index_path, "r", encoding="utf-8") as f:
-            return f.read()
-    return "<h1>VisualNotes AI - Index no encontrado</h1>"
-
-
-@app.get("/landing", response_class=HTMLResponse)
 async def serve_landing():
-    """Página informativa / de marketing del producto."""
+    """Página de inicio: la landing / marketing del producto."""
     landing_path = os.path.join(TEMPLATES_DIR, "landing.html")
     if os.path.exists(landing_path):
         with open(landing_path, "r", encoding="utf-8") as f:
             return f.read()
     return "<h1>VisualNotes AI - Landing no encontrada</h1>"
+
+
+@app.get("/landing", response_class=HTMLResponse)
+async def serve_landing_alias():
+    """Alias de la landing (compatibilidad con enlaces existentes)."""
+    return await serve_landing()
+
+
+@app.get("/app", response_class=HTMLResponse)
+async def serve_index():
+    """Aplicación principal (generador de apuntes)."""
+    index_path = os.path.join(TEMPLATES_DIR, "index.html")
+    if os.path.exists(index_path):
+        with open(index_path, "r", encoding="utf-8") as f:
+            return f.read()
+    return "<h1>VisualNotes AI - Index no encontrado</h1>"
 
 
 @app.get("/api/health")

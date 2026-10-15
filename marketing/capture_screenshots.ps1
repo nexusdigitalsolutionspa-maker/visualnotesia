@@ -59,14 +59,14 @@ function Crop-Image {
 # 1) APLICACIÓN (vistas vía enlaces profundos)
 # ----------------------------------------------------------
 $appShots = @(
-    @{ n = "10_app_crear";         u = "/?view=create";                    w = 1440; h = 1000 },
-    @{ n = "11_app_mapa";          u = "/?view=concept-map&load=latest";   w = 1440; h = 1000 },
-    @{ n = "12_app_guias";         u = "/?view=visual-guides&load=latest"; w = 1440; h = 1000 },
-    @{ n = "13_app_resumen";       u = "/?view=summary-quiz&load=latest";  w = 1440; h = 1100 },
-    @{ n = "14_app_transcripcion"; u = "/?view=transcription&load=latest"; w = 1440; h = 1200 },
-    @{ n = "15_app_markdown";      u = "/?view=markdown-doc&load=latest";  w = 1440; h = 1100 },
-    @{ n = "16_app_recursos";      u = "/?view=web-resources&load=latest"; w = 1440; h = 1000 },
-    @{ n = "17_app_biblioteca";    u = "/?view=library";                   w = 1440; h = 1000 }
+    @{ n = "10_app_crear";         u = "/app?view=create";                    w = 1440; h = 1000 },
+    @{ n = "11_app_mapa";          u = "/app?view=concept-map&load=latest";   w = 1440; h = 1000 },
+    @{ n = "12_app_guias";         u = "/app?view=visual-guides&load=latest"; w = 1440; h = 1000 },
+    @{ n = "13_app_resumen";       u = "/app?view=summary-quiz&load=latest";  w = 1440; h = 1100 },
+    @{ n = "14_app_transcripcion"; u = "/app?view=transcription&load=latest"; w = 1440; h = 1200 },
+    @{ n = "15_app_markdown";      u = "/app?view=markdown-doc&load=latest";  w = 1440; h = 1100 },
+    @{ n = "16_app_recursos";      u = "/app?view=web-resources&load=latest"; w = 1440; h = 1000 },
+    @{ n = "17_app_biblioteca";    u = "/app?view=library";                   w = 1440; h = 1000 }
 )
 foreach ($s in $appShots) {
     Write-Host "Capturando $($s.n) -> $($s.u)"

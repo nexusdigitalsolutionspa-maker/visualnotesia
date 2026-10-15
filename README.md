@@ -129,8 +129,8 @@ python -m uvicorn app:app --host 127.0.0.1 --port 8000
 ```
 
 Abre:
-- Aplicación: http://127.0.0.1:8000
-- Página informativa: http://127.0.0.1:8000/landing
+- Landing (página de inicio): http://127.0.0.1:8000
+- Aplicación: http://127.0.0.1:8000/app
 
 ---
 
