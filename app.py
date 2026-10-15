@@ -346,6 +346,7 @@ async def process_study_material(
             key_points_json=json.dumps(ai_result.get("key_points", [])),
             quiz_json=json.dumps(ai_result.get("quiz", [])),
             study_links_json=json.dumps(ai_result.get("study_links", {})),
+            visual_resources_json=json.dumps(ai_result.get("visual_resources", [])),
             markdown_doc=ai_result.get("markdown_doc", "")
         )
         db.add(new_note)

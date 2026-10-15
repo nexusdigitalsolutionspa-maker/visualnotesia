@@ -64,6 +64,7 @@ class Note(Base):
     key_points_json = Column(Text, default="[]")
     quiz_json = Column(Text, default="[]")
     study_links_json = Column(Text, default="{}")
+    visual_resources_json = Column(Text, default="[]")
     markdown_doc = Column(Text, default="")
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
 
@@ -86,6 +87,10 @@ class Note(Base):
             keywords = json.loads(self.keywords_json) if self.keywords_json else []
         except Exception:
             keywords = []
+        try:
+            visual_resources = json.loads(self.visual_resources_json) if self.visual_resources_json else []
+        except Exception:
+            visual_resources = []
 
         return {
             "id": self.id,
@@ -103,6 +108,7 @@ class Note(Base):
             "key_points": key_points,
             "quiz": quiz,
             "study_links": study_links,
+            "visual_resources": visual_resources,
             "markdown_doc": self.markdown_doc or "",
             "created_at": self.created_at.strftime("%Y-%m-%d %H:%M") if self.created_at else ""
         }
@@ -124,6 +130,11 @@ def init_db():
         from sqlalchemy import text
         try:
             conn.execute(text("ALTER TABLE notes ADD COLUMN study_links_json TEXT DEFAULT '{}'"))
+            conn.commit()
+        except Exception:
+            pass
+        try:
+            conn.execute(text("ALTER TABLE notes ADD COLUMN visual_resources_json TEXT DEFAULT '[]'"))
             conn.commit()
         except Exception:
             pass
