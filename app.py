@@ -1,4 +1,5 @@
 import os
+import hashlib
 import json
 import time
 import logging
@@ -114,6 +115,44 @@ os.makedirs(TEMPLATES_DIR, exist_ok=True)
 
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
+
+def _compute_static_version() -> str:
+    """Versión de los estáticos basada en tamaño y fecha de modificación.
+
+    Cambia automáticamente en cada despliegue que modifique algún archivo de
+    /static, de modo que el navegador descarte la caché y muestre los cambios.
+    """
+    digest = hashlib.md5()
+    try:
+        for root, _dirs, files in os.walk(STATIC_DIR):
+            for name in sorted(files):
+                path = os.path.join(root, name)
+                try:
+                    stat = os.stat(path)
+                    digest.update(f"{path}:{stat.st_size}:{int(stat.st_mtime)}".encode("utf-8"))
+                except OSError:
+                    continue
+    except Exception:
+        pass
+    return digest.hexdigest()[:10]
+
+
+STATIC_VERSION = _compute_static_version()
+
+
+def render_template(filename: str, fallback: str) -> HTMLResponse:
+    """Lee una plantilla, inyecta la versión de estáticos y evita caché del HTML."""
+    path = os.path.join(TEMPLATES_DIR, filename)
+    if not os.path.exists(path):
+        return HTMLResponse(fallback, status_code=404)
+    with open(path, "r", encoding="utf-8") as handle:
+        html = handle.read()
+    html = html.replace("__STATIC_VERSION__", STATIC_VERSION)
+    return HTMLResponse(
+        content=html,
+        headers={"Cache-Control": "no-cache, must-revalidate"},
+    )
+
 # Diccionario de sesiones en memoria para tokens rápidos
 ACTIVE_SESSIONS = {}
 
@@ -176,11 +215,7 @@ ensure_seed_data()
 @app.get("/", response_class=HTMLResponse)
 async def serve_landing():
     """Página de inicio: la landing / marketing del producto."""
-    landing_path = os.path.join(TEMPLATES_DIR, "landing.html")
-    if os.path.exists(landing_path):
-        with open(landing_path, "r", encoding="utf-8") as f:
-            return f.read()
-    return "<h1>VisualNotes AI - Landing no encontrada</h1>"
+    return render_template("landing.html", "<h1>VisualNotes AI - Landing no encontrada</h1>")
 
 
 @app.get("/landing", response_class=HTMLResponse)
@@ -192,11 +227,7 @@ async def serve_landing_alias():
 @app.get("/app", response_class=HTMLResponse)
 async def serve_index():
     """Aplicación principal (generador de apuntes)."""
-    index_path = os.path.join(TEMPLATES_DIR, "index.html")
-    if os.path.exists(index_path):
-        with open(index_path, "r", encoding="utf-8") as f:
-            return f.read()
-    return "<h1>VisualNotes AI - Index no encontrado</h1>"
+    return render_template("index.html", "<h1>VisualNotes AI - Index no encontrado</h1>")
 
 
 @app.get("/api/health")

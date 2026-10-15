@@ -32,3 +32,7 @@ Reto-2/
 Thumbs.db
 .idea/
 .vscode/
+
+# ==== Repositorio público/espejo (carpetas independientes) ====
+visualnoteia-comunidad/
+produccion/
