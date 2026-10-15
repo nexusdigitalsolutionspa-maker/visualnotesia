@@ -22,6 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Soporte de enlaces profundos (?view=...&load=latest) para demos y capturas
   handleDeepLink();
+
+  // Re-encajar los diagramas al cambiar el tamaño u orientación de la ventana.
+  let resizeTimer = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const vg = document.getElementById("view-visual-guides");
+      if (vg && vg.classList.contains("active") && currentVisualResources.length) {
+        renderVisualGuides(currentVisualResources);
+      }
+    }, 250);
+  });
 });
 
 async function handleDeepLink() {
@@ -51,6 +63,9 @@ async function handleDeepLink() {
 
 // Estado global del apunte actualmente cargado (para exportaciones)
 let currentStudyData = null;
+// Últimos datos generados, para re-renderizar diagramas al mostrar su vista.
+let currentVisualResources = [];
+let currentMermaidCode = "";
 
 
 // ========================================================
@@ -90,7 +105,12 @@ function setupSubnavNavigation() {
 
     subnavItems.forEach((btn) => btn.classList.remove("active"));
     const activeBtn = document.querySelector(`.subnav-item[data-view="${viewKey}"]`);
-    if (activeBtn) activeBtn.classList.add("active");
+    if (activeBtn) {
+      activeBtn.classList.add("active");
+      try {
+        activeBtn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      } catch (e) {}
+    }
 
     document.querySelectorAll(".view-panel").forEach((panel) => {
       panel.classList.remove("active");
@@ -99,6 +119,15 @@ function setupSubnavNavigation() {
     const activePanel = document.getElementById(`view-${viewKey}`);
     if (activePanel) {
       activePanel.classList.add("active");
+    }
+
+    // Re-renderizar los diagramas cuando su vista se vuelve visible.
+    // Evita esquemas en blanco si se generaron mientras el panel estaba oculto.
+    if (viewKey === "visual-guides" && currentVisualResources.length) {
+      renderVisualGuides(currentVisualResources);
+    }
+    if (viewKey === "concept-map" && currentMermaidCode) {
+      diagram.render(currentMermaidCode);
     }
 
     if (viewKey === "library") {
@@ -384,6 +413,7 @@ function populateResultsUI(aiData, savedNote) {
 
   // Guardar estado global para exportaciones
   currentStudyData = aiData;
+  currentMermaidCode = aiData.mermaid_code || "";
 
   // Actualizar indicador superior
   const indicator = document.getElementById("current-note-indicator");
@@ -559,6 +589,8 @@ function renderVisualGuides(visualList) {
       }
     ];
   }
+
+  currentVisualResources = visualList;
 
   container.innerHTML = "";
 
