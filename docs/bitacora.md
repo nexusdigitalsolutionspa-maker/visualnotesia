@@ -14,6 +14,23 @@ Antes de la reunión del 4 de noviembre, el equipo pasó por tres versiones del 
 | 2026-10-29 | Prototipo 3 | ![Prototipo 3](../imagenes/Prototipo3.png) | Se le dio un poco más de forma, pero todavía no nos decidíamos por el nombre del proyecto |
 
 > El 1 de octubre es la fecha indicada por el equipo. Las fechas del 15 y del 29 de octubre se estimaron a partir de la secuencia de versiones; ajustarlas si fue distinto.
+> El 10 de octubre surgió el prototipo con el nombre `visualnoteia`; el nombre definitivo todavía estaba en discusión el 29 de octubre.
+
+## Sesiones del equipo
+
+| Fecha | Sesión | Qué pasó |
+|---|---|---|
+| 2026-10-01 | Reunión de clase | Nació la idea del proyecto |
+| 2026-10-04 | Primera reunión del equipo | Se definió lo que se haría en la asignación |
+| 2026-10-10 | Asignaturas y reto de la semana | Se subieron las asignaturas y se organizó el reto; se habló de pulir la app y surgió el prototipo con el nombre `visualnoteia` |
+| 2026-10-15 | Despliegue y revisión | Se desplegó la app en un dominio; nos reunimos para ver el funcionamiento y la lógica; se creó `CONTRIBUTING.md` |
+| 2026-10-16 | Pruebas y publicación | Comenzaron las pruebas con usuarios fuera del grupo; se subió todo a GitHub |
+| 2026-10-20 | Contribución y sostenibilidad | Se mejoró la lógica de la contribución siguiendo el plan de sostenibilidad |
+| 2026-10-22 | Resumen | Se hizo un resumen del avance |
+| 2026-10-29 | Revisión de otros repos | Se revisaron otros repositorios para ver cómo se podía contribuir con Visual Notes |
+| 2026-11-04 | Reunión del equipo | Mejora visual → más mapas → resumen en PDF (ver [Activación 1](#activación-1)) |
+
+> El 22 de octubre se registró tal como lo indicó el equipo; en el calendario de 2026 ese día cae jueves.
 
 ## Activación 1
 
