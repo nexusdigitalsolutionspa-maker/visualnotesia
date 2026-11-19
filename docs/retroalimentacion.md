@@ -37,4 +37,6 @@ Cada fila se puede verificar: el origen del comentario se nombra, el ajuste se d
 
 ---
 
-Relacionado: [Uso de IA](uso-de-ia.md) · [Bitácora](bitacora.md) · [Mapa de Comunidad](mapa-de-comunidad.md).
+El canal abierto para nuevos comentarios es el [Issue #1](https://github.com/nexusdigitalsolutionspa-maker/visualnotesia/issues/1): cada aporte se incorpora aquí y se registra en la bitácora.
+
+Relacionado: [Uso de IA](uso-de-ia.md) · [Bitácora](bitacora.md) · [Mapa de Comunidad](mapa-de-comunidad.md) · [Plan de sostenibilidad](plan-de-sostenibilidad.md).

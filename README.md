@@ -13,7 +13,7 @@ VisualNotes AI es también una comunidad de práctica: producimos, revisamos y c
 
 ### Cómo empezar a participar (resumen de [CONTRIBUTING.md](CONTRIBUTING.md))
 
-La escalera es **observar → probar → aportar → facilitar**. Prueba la aplicación con la [guía rápida](recursos/guia-de-uso-rapida.md), cuenta en un **Issue** qué funcionó o en qué paso te trabaste y, si quieres ir más lejos, envía un **Pull Request** con código o documentación. No subas `.env`, claves ni datos personales.
+La escalera es **observar → probar → aportar → facilitar**. Prueba la aplicación con la [guía rápida](recursos/guia-de-uso-rapida.md) y deja tu experiencia en el [Issue #1: prueba VisualNotes AI y danos tu retroalimentación](https://github.com/nexusdigitalsolutionspa-maker/visualnotesia/issues/1). Si quieres ir más lejos, envía un **Pull Request** con código o documentación. No subas `.env`, claves ni datos personales.
 
 Para leer más: [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -39,7 +39,7 @@ visualnotesia/
 |---|---|
 | [Entrega 1 · Mapa de Comunidad](docs/mapa-de-comunidad.md) | Dominio, intención, participantes, trayectorias de participación, rituales y espacios |
 | [Entrega 2 · Recursos reutilizables](recursos/) | Recursos con origen, usables sin el equipo y enlazados desde el README |
-| [Entrega 3 · Plan de evolución y sostenibilidad](docs/plan-de-sostenibilidad.md) | Documento `Entrega-3.md`: cómo ejecutar, comprobar y continuar VisualNotes AI |
+| [Entrega 3 · Plan de evolución y sostenibilidad](docs/plan-de-sostenibilidad.md) | Plan de continuidad: responsables rotativos, rituales, bienvenida, señales reales y copia del proyecto; incluye la guía técnica como anexo |
 | [Bitácora de activación](docs/bitacora.md) | Activación ejecutada o ensayada, evidencias y ajustes |
 | [Retroalimentación](docs/retroalimentacion.md) | Quién comentó, qué dijo, qué ajustamos y dónde se ve el cambio |
 | [Uso de IA](docs/uso-de-ia.md) | Ideas propias, sugerencias de la IA y decisiones del equipo |
@@ -60,20 +60,23 @@ visualnotesia/
 | ![Imagen 1](imagenes/recurso1.png) | `imagenes/recurso1.png` |
 | ![Imagen 2](imagenes/recurso2.png) | `imagenes/recurso2.png` |
 
+Las fechas de los prototipos 2 y 3 quedan fijadas en la [bitácora](docs/bitacora.md#evolución-del-prototipo) según el acuerdo de cierre del equipo.
+
 ### Equipo
 
-Integrantes del **Grupo 4 · IA y Sistemas** (detalle y capacidades en el [Mapa de Comunidad](docs/mapa-de-comunidad.md#3-comunidad)):
+**5 integrantes** del **Grupo 4 · IA y Sistemas** (detalle y capacidades en el [Mapa de Comunidad](docs/mapa-de-comunidad.md#3-comunidad)):
 
 Cesar Adrian Villamil Alzamora · Said Enrique Mendoza Acevedo · Alice Alexandra Rojas Vergara · Samantha Valentina Matos Gutierrez · Josue Antonio Parfait Miranda
 
-| Rol | Responsable | Responsabilidad |
-|---|---|---|
-| Facilitación | `[completar]` | Coordinar sesiones y dar la bienvenida |
-| Documentación | `[completar]` | Bitácora y recursos |
-| Código e IA | `[completar]` | Backend, integración con Gemini y despliegue |
-| Revisión | `[completar]` | Revisar PRs y observar las señales de comunidad |
+| Rol | Responsable | Siguiente rotación | Responsabilidad |
+|---|---|---|---|
+| Facilitación y bienvenida | Cesar Adrian Villamil Alzamora | Said Enrique Mendoza Acevedo | Coordinar sesiones y dar la bienvenida |
+| Documentación | Alice Alexandra Rojas Vergara | Samantha Valentina Matos Gutierrez | Bitácora, mapa y retroalimentación |
+| Código e IA | Said Enrique Mendoza Acevedo | Josue Antonio Parfait Miranda | Backend, integración con Gemini y despliegue |
+| Revisión de PRs | Samantha Valentina Matos Gutierrez | Cesar Adrian Villamil Alzamora | Revisar cambios y aplicar el checklist |
+| Pruebas y señales | Josue Antonio Parfait Miranda | Alice Alexandra Rojas Vergara | Invitar a probar y registrar comentarios |
 
-> El plan de sostenibilidad es [Entrega-3.md](docs/plan-de-sostenibilidad.md).
+La rotación es cada dos semanas según el [plan de sostenibilidad](docs/plan-de-sostenibilidad.md#responsabilidades-compartidas). El [calendario de rituales](docs/plan-de-sostenibilidad.md#calendario-de-rituales) fija la próxima sesión para el miércoles 25 de noviembre de 2026.
 
 ---
 
@@ -266,6 +269,7 @@ docker run --rm -p 8000:8000 --env-file .env \
 
 Usa la pestaña **[Issues](https://github.com/nexusdigitalsolutionspa-maker/visualnotesia/issues)** del repositorio:
 
+- 💬 **[Issue #1](https://github.com/nexusdigitalsolutionspa-maker/visualnotesia/issues/1)** — prueba la app y deja tus comentarios.
 - 🐛 **Bug report** — algo no funciona.
 - ✨ **Feature request** — ideas y mejoras.
 
@@ -273,7 +277,7 @@ Usa la pestaña **[Issues](https://github.com/nexusdigitalsolutionspa-maker/visu
 
 ## 🤝 Contribuir
 
-Las contribuciones son bienvenidas. Lee [CONTRIBUTING.md](CONTRIBUTING.md) para saber cómo proponer cambios.
+Las contribuciones son bienvenidas. Empieza respondiendo el [Issue #1](https://github.com/nexusdigitalsolutionspa-maker/visualnotesia/issues/1) y lee [CONTRIBUTING.md](CONTRIBUTING.md) para saber cómo proponer cambios.
 
 ---
 

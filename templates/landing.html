@@ -14,11 +14,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <!-- ==========================================================
-       CONFIGURACIÓN RÁPIDA
-       Cuando tengas el repositorio, reemplaza el valor de GITHUB_REPO.
+       CONFIGURACIÓN DEL REPOSITORIO OFICIAL
+       La URL de GITHUB_REPO ya está publicada; cámbiala solo si el proyecto se muda.
   ========================================================== -->
   <script>
-    // 👉 Pega aquí la URL del repositorio cuando esté listo. Ej: "https://github.com/usuario/visualnotes-ai"
     window.VISUALNOTES = {
       GITHUB_REPO: "https://github.com/nexusdigitalsolutionspa-maker/visualnotesia",
       APP_URL: "/app",                   // ruta de la aplicación principal
@@ -625,8 +624,8 @@
         <h2 style="margin-top:18px;">Ayúdanos a construir VisualNotes AI</h2>
         <p class="lead">
           VisualNotes AI es un proyecto abierto. Puedes contribuir con código, ideas, diseño o
-          documentación. Muy pronto publicaremos el repositorio en GitHub para que cualquier
-          estudiante pueda sumarse.
+          documentación. El repositorio ya está publicado en GitHub y cualquier estudiante puede
+          sumarse desde el Issue #1.
         </p>
 
         <div class="contrib-grid">
@@ -652,7 +651,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.57v-2.02c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.22 1.84 1.22 1.07 1.8 2.81 1.28 3.5.98.11-.76.42-1.28.76-1.57-2.67-.3-5.47-1.31-5.47-5.82 0-1.29.47-2.34 1.23-3.17-.12-.3-.53-1.5.12-3.13 0 0 1-.32 3.3 1.21a11.6 11.6 0 0 1 6 0c2.29-1.53 3.29-1.21 3.29-1.21.65 1.63.24 2.83.12 3.13.77.83 1.23 1.88 1.23 3.17 0 4.52-2.8 5.51-5.49 5.8.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.83.57A12.02 12.02 0 0 0 24 12.29C24 5.78 18.63.5 12 .5Z"/></svg>
             Ver repositorio en GitHub
           </a>
-          <span class="soon-badge">Repositorio próximamente</span>
+          <a class="soon-badge" href="https://github.com/nexusdigitalsolutionspa-maker/visualnotesia/issues/1" target="_blank" rel="noopener">Deja tu comentario en el Issue #1</a>
         </div>
       </div>
     </div>
@@ -704,7 +703,7 @@
         if (!cfg.GITHUB_REPO || cfg.GITHUB_REPO === "#") {
           el.addEventListener("click", function (e) {
             e.preventDefault();
-            alert("El repositorio de GitHub se publicará próximamente. ¡Gracias por querer contribuir!");
+            alert("Todavía no hay un repositorio configurado. ¡Gracias por querer contribuir!");
           });
         } else {
           el.setAttribute("target", "_blank");

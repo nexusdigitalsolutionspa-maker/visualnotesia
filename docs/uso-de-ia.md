@@ -23,10 +23,10 @@ Este archivo distingue tres cosas: las ideas del equipo, lo que sugirió la IA y
 
 | Sugerencia de la IA | Decisión del equipo | Motivo |
 |---|---|---|
-| Redactar la bitácora con una activación de ejemplo | **Rechazado.** La bitácora queda como plantilla con campos `[completar]` | La guía pide registrar solo lo ocurrido; inventar evidencia empeora el proyecto |
-| Escribir nombres y fechas concretas en el mapa y el plan | **Ajustado.** Se usan marcadores y roles | Evita datos personales no autorizados y datos que aún no se validaron |
-| Crear más recursos de forma automática | **Reducido a dos** | El documento del equipo se usa como Entrega 3 y los dos apoyos cubren arranque y formato |
-| Renombrar el repositorio a `mi-comunidad` | **Pendiente de decidir** | El repo oficial del grupo ya es `visualnotesia` y ya es público en GitHub |
+| Redactar la bitácora con una activación de ejemplo | **Rechazado como plantilla.** Se registraron las 11 activaciones con datos consolidados por el equipo | La guía pide registrar solo lo ocurrido; la plantilla permanece en la guía, no en el repo |
+| Escribir nombres y fechas concretas en el mapa y el plan | **Aceptado con revisión.** Se usan los 5 nombres del mapa, las fechas acordadas y la rotación de roles | Evita marcadores sin confirmar y mantiene responsabilidades compartidas |
+| Crear más recursos de forma automática | **Reducido a dos** | El plan de sostenibilidad se usa como Entrega 3 y los dos apoyos cubren arranque y formato |
+| Renombrar el repositorio a `mi-comunidad` | **Descartado.** Se conserva `visualnotesia` | El repo oficial del grupo ya es público con ese nombre y todos los enlaces apuntan a él |
 
 ## 4. IA dentro del producto
 

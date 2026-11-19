@@ -33,6 +33,5 @@ Thumbs.db
 .idea/
 .vscode/
 
-# ==== Repositorio público/espejo (carpetas independientes) ====
-visualnoteia-comunidad/
+# ==== Carpetas de producción (independientes del repositorio) ====
 produccion/

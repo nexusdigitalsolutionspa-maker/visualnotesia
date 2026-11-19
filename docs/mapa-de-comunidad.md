@@ -33,7 +33,7 @@ El dominio que reúne al grupo es la **inteligencia artificial aplicada a la edu
 
 ### Participantes actuales
 
-El proyecto está siendo desarrollado por:
+El proyecto está siendo desarrollado por **5 integrantes**:
 
 - Cesar Adrian Villamil Alzamora
 - Said Enrique Mendoza Acevedo
@@ -87,17 +87,17 @@ Una persona podría incorporarse progresivamente a la comunidad mediante diferen
 
 Probar el prototipo con información sencilla y observar cómo organiza los conceptos.
 
-### Preguntar
+### Probar
 
-Compartir dudas y comentarios sobre si la estructura generada facilita la comprensión de la información.
+Ejecutar la [guía rápida](../recursos/guia-de-uso-rapida.md), generar un kit con material propio y compartir qué funcionó y qué no en un Issue.
 
-### Contribuir
+### Aportar
 
-Aportar código, ideas de diseño, ejemplos de uso, reglas para organizar la información o propuestas de nuevas funcionalidades.
+Aportar código, documentación, ideas de diseño, ejemplos de uso o propuestas de nuevas funcionalidades mediante un Pull Request.
 
-### Acompañar
+### Facilitar
 
-Ayudar a otros participantes a utilizar el prototipo, explicar su funcionamiento y compartir aprendizajes obtenidos durante las pruebas.
+Dar la bienvenida, revisar aportes y coordinar una sesión del equipo, rotando esa responsabilidad según el [plan de sostenibilidad](plan-de-sostenibilidad.md#responsabilidades-compartidas).
 
 ---
 
@@ -153,7 +153,7 @@ Ayudar a otros participantes a utilizar el prototipo, explicar su funcionamiento
                  y aprendizajes
 
 Participación:
-Observar → Preguntar → Contribuir → Acompañar
+Observar → Probar → Aportar → Facilitar
 ```
 
 ---
@@ -170,9 +170,9 @@ Esta exploración funciona como una primera aproximación al concepto del proyec
 
 La primera versión debe ser capaz de **recibir información relacionada con una clase y generar una representación visual de los conceptos principales**, de manera que pueda servir como apoyo para organizar y revisar los apuntes.
 
-### Pendiente
+### Acuerdo registrado
 
-El grupo deberá acordar el alcance definitivo de la primera versión, las tecnologías que utilizará y las funcionalidades que se incorporarán.
+El grupo fijó el alcance de la primera versión: recibir audio, imagen o texto y devolver transcripción, apuntes, palabras clave, mapa conceptual, resumen, quiz y Markdown. La tecnología elegida fue Python con FastAPI, Gemini para el análisis y SQLite para la persistencia local, con despliegue en `https://visualnotesia.nexusdigitalsolutions.group/`.
 
 ---
 
@@ -190,11 +190,11 @@ Se realizó una primera exploración de una interfaz web y de una generación se
 
 La exploración permitió identificar que una representación visual puede servir como punto de partida para la propuesta, pero que una herramienta útil necesitará métodos más adecuados para identificar conceptos y relaciones entre ellos.
 
-### Qué queda por probar
+### Qué se probó después
 
-El equipo deberá realizar una prueba conjunta con información similar a unos apuntes reales y observar si la representación facilita la comprensión y organización de los conceptos.
+El 4 de noviembre el equipo probó la aplicación con apuntes reales y observó que la representación ayudaba a organizar conceptos, pero que la salida visual y la entrega del resultado necesitaban mejoras. De esa prueba salieron tres acuerdos: mejorar la interfaz, agregar más mapas y exportar el resumen en PDF.
 
-A partir de esa prueba se podrán determinar los cambios necesarios.
+La siguiente prueba la hará una persona externa al equipo usando el [Issue #1](https://github.com/nexusdigitalsolutionspa-maker/visualnotesia/issues/1).
 
 ---
 
@@ -212,13 +212,17 @@ Realizar una reunión del equipo para:
 
 ### Responsables
 
-**Grupo 4 · IA y Sistemas**
+**Grupo 4 · IA y Sistemas** (5 integrantes). La rotación queda detallada en el [plan de sostenibilidad](plan-de-sostenibilidad.md#responsabilidades-compartidas):
+
+- Facilitación y bienvenida: Cesar Adrian Villamil Alzamora; siguiente rotación: Said Enrique Mendoza Acevedo.
+- Documentación: Alice Alexandra Rojas Vergara; siguiente rotación: Samantha Valentina Matos Gutierrez.
+- Código e IA: Said Enrique Mendoza Acevedo; siguiente rotación: Josue Antonio Parfait Miranda.
+- Revisión: Samantha Valentina Matos Gutierrez; siguiente rotación: Cesar Adrian Villamil Alzamora.
+- Pruebas y señales de comunidad: Josue Antonio Parfait Miranda; siguiente rotación: Alice Alexandra Rojas Vergara.
 
 ### Fecha
 
-**Próxima reunión del equipo: miércoles [completar fecha].**
-
-La fecha y las responsabilidades específicas se actualizarán después de la reunión del grupo.
+**Próxima reunión del equipo: miércoles 25 de noviembre de 2026, 7:00 p.m.**
 
 ---
 
@@ -240,11 +244,9 @@ La fecha y las responsabilidades específicas se actualizarán después de la re
 - [Captura de pantalla 2](https://drive.google.com/file/d/1cJNtPGNwVAJJDsYKXHuqGnvOExQtiFDF/view?usp=sharing)
 - [Captura de pantalla 3](https://drive.google.com/file/d/1JdeD6X7zC09hWVqRgZADwpofUNVQekjZ/view?usp=sharing)
 
-### Pendiente
+### Siguientes pasos del plan de continuidad
 
-- Acordar la función definitiva de la primera versión.
-- Definir las tecnologías que utilizará el grupo.
-- Realizar una prueba conjunta.
-- Analizar los resultados de la prueba.
-- Incorporar las modificaciones acordadas.
-- Definir responsabilidades y próximos encuentros.
+- Mejorar la salida visual y agregar más mapas — Said y Josue, reunión del 25 de noviembre de 2026.
+- Preparar la exportación del resumen en PDF — Alice, para la sesión del 9 de diciembre de 2026.
+- Recibir comentarios de personas externas en el [Issue #1](https://github.com/nexusdigitalsolutionspa-maker/visualnotesia/issues/1) — Samantha, seguimiento semanal.
+- Registrar los resultados en la [retroalimentación](retroalimentacion.md) y en la [bitácora](bitacora.md) — Alice y Cesar, cierre de cada ciclo de dos semanas.

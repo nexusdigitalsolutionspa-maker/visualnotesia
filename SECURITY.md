@@ -13,8 +13,8 @@ Por favor **no** abras un Issue público para vulnerabilidades sensibles.
 
 En su lugar, contacta de forma privada al equipo:
 
-- Correo: `secure@nexusdigital.example`  _(reemplazar por el correo real del equipo)_
-- O usa la función **“Report a vulnerability”** de GitHub (pestaña *Security* → *Advisories*).
+- Usa la función **“Report a vulnerability”** de GitHub: <https://github.com/nexusdigitalsolutionspa-maker/visualnotesia/security/advisories/new> (pestaña *Security* → *Advisories*).
+- Si no tienes acceso a esa función, deja un comentario privado tagging al equipo en el repositorio; no publiques detalles del fallo en un Issue abierto.
 
 Incluye, si es posible:
 

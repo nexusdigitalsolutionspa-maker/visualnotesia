@@ -1,47 +1,111 @@
-# Cómo ejecutar y continuar VisualNotes AI
+# Plan de evolución y sostenibilidad — VisualNotes AI
 
-> Recurso del **Grupo 4 — Universidad Cenfotec** para el reto
-> «Una experiencia que otra persona pueda continuar» ·
-> **Activadores de Comunidades de Práctica · SENACYT**.
+> Grupo 4 — Universidad Cenfotec (curso IA y Sistemas).
+> Este plan explica cómo sigue viviendo la comunidad después de la entrega: quién hace qué, cada cuánto se reúne, cómo entra una persona nueva y qué señales muestran que el proyecto continúa.
+> No depende de una sola persona: las responsabilidades se rotan y todo queda registrado en el repositorio.
 
-## Para qué sirve
+## Objetivo de continuidad
 
-Permite que una persona con conocimientos básicos de Python **levante la aplicación VisualNotes AI** en su computadora y convierta una sola fuente (audio de clase, foto de pizarra/apuntes o texto) en un kit de estudio generado con IA:
+Queremos que una persona que no participó en el desarrollo pueda entender VisualNotes AI, probarlo, aportar una mejora y encontrar el registro de lo que hicimos. La continuidad se mide por esas acciones, no por la presencia permanente de los integrantes originales.
 
-- transcripción completa y contenido limpio y ordenado;
-- apuntes estructurados y palabras clave;
-- **mapa conceptual editable** (grafo interactivo + Mermaid);
-- resumen ejecutivo y **quiz** de autoevaluación;
-- **cronología** de fechas y **tablas comparativas**;
-- documento **Markdown** listo para Obsidian/Notion.
+Tres acuerdos sostienen el plan:
 
-Sirve para estudiar con IA, para preparar clase con material propio y como **base para que otra persona agregue funciones** (exportar a PDF, más representaciones visuales, nuevos idiomas, etc.) sin depender de nosotros.
+1. **El repositorio es la memoria:** README, mapa, bitácora, entregas, recursos e imágenes viven en `visualnotesia`.
+2. **Cada aporte deja una huella visible:** un Issue, un Pull Request, una entrada en la bitácora o un recurso actualizado.
+3. **Las responsabilidades rotan:** nadie queda como único dueño de una tarea.
 
-## Enlace Para probar la web sin necesidad de descargar el repositorio: https://visualnotesia.nexusdigitalsolutions.group/
+## Responsabilidades compartidas
 
-## Qué necesitás
+Equipo base: **5 integrantes del Grupo 4 · IA y Sistemas**.
 
-- **Python 3.12** (o 3.11+).
-- **Git** (para clonar el repositorio).
-- Una **clave de API de Google Gemini** (hay plan gratuito): <https://aistudio.google.com/app/apikey>.
-- Conexión a Internet (Gemini y las librerías de CDN: Mermaid, marked, Three.js).
-- **Opcional:** Docker y Docker Compose para ejecutarlo en contenedor.
-- Conocimientos previos: abrir una terminal, editar un archivo de texto y entender qué es «una variable de entorno».
+| Responsabilidad | Responsable actual | Siguiente rotación | Qué hace |
+|---|---|---|---|
+| Facilitación y bienvenida | Cesar Adrian Villamil Alzamora | Said Enrique Mendoza Acevedo | Coordina la sesión, abre el orden del día y saluda a quien llega |
+| Documentación | Alice Alexandra Rojas Vergara | Samantha Valentina Matos Gutierrez | Actualiza bitácora, mapa y retroalimentación |
+| Código e IA | Said Enrique Mendoza Acevedo | Josue Antonio Parfait Miranda | Atiende fallos de la app, prompts y despliegue |
+| Revisión de Pull Requests | Samantha Valentina Matos Gutierrez | Cesar Adrian Villamil Alzamora | Revisa cambios, aplica el checklist de `CONTRIBUTING.md` |
+| Pruebas y señales de comunidad | Josue Antonio Parfait Miranda | Alice Alexandra Rojas Vergara | Invita a probar, recoge comentarios y los registra |
 
-Repositorio del recurso: <https://github.com/nexusdigitalsolutionspa-maker/visualnoteia-comunidad>
+La rotación ocurre **cada dos semanas**, al cierre del ritual de sesión de trabajo. Si una persona no puede asistir, delega su responsabilidad en la persona indicada en "Siguiente rotación" y lo anota en la bitácora.
 
-## Cómo hacerlo
+## Calendario de rituales
 
-### 1. Clonar el repositorio
+| Ritual | Frecuencia | Próxima fecha | Responsable | Salida observable |
+|---|---|---|---|---|
+| Sesión de trabajo | Cada dos semanas | Miércoles 25 de noviembre de 2026, 7:00 p.m. | Cesar | Acta en `docs/bitacora.md` con acuerdos y ajuste |
+| Revisión de Pull Requests | Semanal | Miércoles 25 de noviembre de 2026 | Samantha | PR revisado con comentarios o aprobación |
+| Prueba con una persona externa | Cada dos semanas | Sábado 28 de noviembre de 2026 | Josue | Comentario en el [Issue #1](https://github.com/nexusdigitalsolutionspa-maker/visualnotesia/issues/1) |
+| Cierre de ciclo | Cada cuatro semanas | Sábado 12 de diciembre de 2026 | Alice | Bitácora y retroalimentación actualizadas |
+
+Cada ritual termina con la misma pregunta: **¿qué cambió para que otra persona pueda continuar sin nosotros?**
+
+## Cómo dar la bienvenida
+
+Una persona nueva entra por una acción pequeña y visible:
+
+1. Leer el [README](../README.md), el [mapa de comunidad](mapa-de-comunidad.md) y este plan.
+2. Sumarse al [Issue #1](https://github.com/nexusdigitalsolutionspa-maker/visualnotesia/issues/1) y contar qué probó, qué funcionó y en qué paso se detuvo.
+3. Seguir la [guía rápida](../recursos/guia-de-uso-rapida.md) en su propia computadora o usar la versión desplegada en <https://visualnotesia.nexusdigitalsolutions.group/>.
+4. Tomar la [plantilla de kit de estudio](../recursos/plantilla-kit-de-estudio.md) como formato común y comparte el resultado.
+5. Si quiere ir más lejos, abrir un Pull Request siguiendo [CONTRIBUTING.md](../CONTRIBUTING.md).
+
+**Primer aporte mínimo:** un comentario en el Issue #1 con una observación concreta. No se pide permiso especial ni saber programar para dar ese paso. La persona responsable de facilitación responde en un plazo de dos días y la de documentación registra el aporte.
+
+## Señales reales de comunidad
+
+No contamos estrellas, visitas ni descargas como prueba de comunidad. Observamos acciones que otra persona puede verificar:
+
+| Señal real | Cómo se observa | Dónde se registra |
+|---|---|---|
+| Una persona nueva genera un kit sin pedir ayuda | Comentario con material usado y resultado | [Retroalimentación](retroalimentacion.md) |
+| Otra persona corrige o amplía un documento | Pull Request revisado y fusionado | Historial de commits de `main` |
+| Alguien vuelve a probar en una segunda sesión | Segundo comentario en el Issue #1 | [Bitácora](bitacora.md) |
+| Un recurso se reutiliza fuera del equipo | Copia del recurso con mención de origen | `recursos/` y `docs/uso-de-ia.md` |
+| Una responsabilidad se rota sin confusiones | Acta de la sesión con nuevo responsable | [Responsabilidades compartidas](#responsabilidades-compartidas) |
+
+Si una señal aparece y no está registrada, la persona de documentación la agrega en el cierre de ciclo.
+
+## Cómo copiar o continuar esta comunidad
+
+1. Hacer un fork o clonar <https://github.com/nexusdigitalsolutionspa-maker/visualnotesia> y conservar la [licencia MIT](../LICENSE).
+2. Mantener la estructura de la guía: `README.md`, `CONTRIBUTING.md`, `docs/`, `recursos/` e `imagenes/`.
+3. Elegir responsables para las cinco tareas de [Responsabilidades compartidas](#responsabilidades-compartidas) y fijar la primera rotación.
+4. Reproducir los cuatro rituales del [calendario](#calendario-de-rituales) durante al menos dos ciclos.
+5. Publicar cada cambio en un Issue o Pull Request y consolidarlo en la bitácora.
+6. Atribuir el origen del proyecto al Grupo 4 — Universidad Cenfotec y mantener las licencias de terceros del [anexo técnico](#anexo-técnico-ejecutar-visualnotes-ai).
+
+Si el equipo original ya no está disponible, el repositorio, la licencia y este plan bastan para reiniciar la comunidad: no hay permisos ni documentos que solo existan en una persona.
+
+## Estado de la entrega
+
+- [x] Responsabilidades compartidas con nombres y rotación.
+- [x] Próximos rituales con fechas y responsables.
+- [x] Recepción de nuevos miembros con un primer aporte mínimo.
+- [x] Señales reales de comunidad definidas frente a métricas de vanidad.
+- [x] Procedimiento para que otro grupo copie o continúe la comunidad.
+- [x] Documentación publicada y enlazada desde el README.
+
+## Revisión registrada
+
+La revisión interna del 19 de noviembre comprobó que una persona ajena al equipo podía comprender el propósito con el README y la guía rápida. Las dudas que aparecieron fueron sobre la clave de Gemini y sobre la persistencia de la base de datos; ambas quedaron explicadas en el [anexo técnico](#anexo-técnico-ejecutar-visualnotes-ai). Como ajuste se corrigieron los enlaces del repositorio anterior y se añadió el canal abierto de comentarios en el Issue #1.
+
+## Anexo técnico: ejecutar VisualNotes AI
+
+Esta sección conserva la guía técnica original como respaldo. No depende de este equipo para ejecutarse.
+
+### Requisitos
+
+- Python 3.12 (o 3.11+).
+- Git.
+- Una clave de API de Google Gemini (plan gratuito): <https://aistudio.google.com/app/apikey>.
+- Conexión a Internet para Gemini y las librerías de CDN (Mermaid, marked, Three.js).
+- Opcional: Docker y Docker Compose.
+
+### Pasos
 
 ```bash
-git clone https://github.com/nexusdigitalsolutionspa-maker/visualnoteia-comunidad.git
-cd visualnoteia-comunidad
-```
-
-### 2. Crear el entorno e instalar dependencias
-
-```bash
+git clone https://github.com/nexusdigitalsolutionspa-maker/visualnotesia.git
+cd visualnotesia
 python -m venv .venv
 ```
 
@@ -50,158 +114,41 @@ python -m venv .venv
 
 ```bash
 pip install -r requirements.txt
-```
-
-### 3. Configurar la clave de Gemini
-
-Copia el archivo de ejemplo y edita tu clave. **Nunca** la escribas en el código ni la subas al repositorio.
-
-```bash
 cp .env.example .env
 ```
 
-Contenido mínimo de `.env`:
-
-```env
-GEMINI_API_KEY=tu_clave_de_gemini
-ENABLE_AUTH=false
-RATE_LIMIT_PER_MINUTE=20
-MAX_UPLOAD_MB=25
-```
-
-### 4. Iniciar el servidor
+Editar `.env` con la clave en `GEMINI_API_KEY`. **Nunca** subir `.env` ni escribir la clave en el código. Para iniciar:
 
 ```bash
-python -m uvicorn app:app --host 127.0.0.1 --port 8000
+uvicorn app:app --reload
 ```
 
-Abre en el navegador:
+Abrir <http://127.0.0.1:8000>. Como alternativa con Docker: `docker compose up --build`.
 
-- **Landing (inicio):** <http://127.0.0.1:8000>
-- **Aplicación:** <http://127.0.0.1:8000/app>
+### Comprobación
 
-### 5. Generar tu primer apunte
+Generar un apunte desde texto, imagen o audio y verificar que aparezcan transcripción, apuntes, palabras clave, mapa conceptual, resumen y quiz. Recargar la página y comprobar el apunte en *Mis Apuntes*: si desaparece en un despliegue, falta montar un volumen persistente en `/app/data`.
 
-En la vista **Crear**: elige el tipo de entrada (audio, imagen o texto), adjunta o escribe el material y pulsa el botón de procesar. Cuando termine, recorre las vistas del menú (Mapa Conceptual, Guías Visuales, Resumen y Quiz, Transcripción, Documento Markdown, Videos y Enlaces, Mis Apuntes).
+### Tropiezos documentados
 
-### 5.b. Ejecución con Docker (alternativa)
-
-```bash
-docker compose up --build
-# Abre: http://localhost:8000
-```
-
-Manual:
-
-```bash
-docker build -t visualnotes-ai .
-docker run --rm -p 8000:8000 --env-file .env -v "$(pwd)/data:/app/data" visualnotes-ai
-```
-
-> El volumen `./data` (montado en `/app/data`) conserva la base SQLite entre reinicios. **Sin ese volumen, las notas se pierden en cada despliegue.**
-
-### 6. Extender el mapa conceptual
-
-- El mapa se alimenta de los campos `concepts` y `relations` que devuelve Gemini (con `importance` y una `evidence` textual).
-- El editor interactivo vive en `static/js/conceptmap.js`; la vista se integra en `static/js/app.js` (`renderConceptMapView`, `saveConceptMap`) y se guarda con `PUT /api/notes/{id}/map`.
-- La **cronología** (`events`) y las **tablas** (`tables`) se normalizan en `gemini_service.py` y se persisten dentro de `map_json` (ver `database.py`).
-
-## Cómo comprobar que funcionó
-
-1. **Servidor arriba:** visita <http://127.0.0.1:8000/api/health>. Debe responder:
-
-   ```json
-   {"status":"ok"}
-   ```
-
-2. **Interfaz viva:** la landing carga en `/` y la app en `/app` muestra el menú lateral con las vistas.
-- **Generación con IA:** genera un apunte desde un texto corto (por ejemplo, dos o tres frases sobre un tema) y verifica que aparezcan el resumen, los conceptos y el mapa. Si no aparece el mapa, revisa que `GEMINI_API_KEY` sea válida y que tengas cuota disponible.
-- **Mapa interactivo:** en la vista *Mapa Conceptual* deben verse nodos unidos por flechas; al hacer clic en un nodo aparece su detalle y, si hay evidencia, un chip «Fragmento N» que resalta la frase en la vista *Transcripción*.
-- **Cronología y tablas:** si el material menciona fechas o compara elementos, aparecen en *Resumen y Quiz*.
-- **Persistencia:** genera un apunte, recarga el navegador y confírmalo en *Mis Apuntes* (si recargas y has perdido las notas en un despliegue, el problema es el volumen de la base de datos; ver más abajo).
-
-## Qué aprendimos y qué falta resolver
-
-**Errores frecuentes que ya vivimos (y cómo los resolvimos):**
-
-1. **La clave de API estaba en el código.** La movimos a `.env` (ignorado por Git). Si una clave queda expuesta, **rótala** en Google AI Studio.
-2. **La evidencia de los conceptos no coincidía con el texto ordenado.** La IA suele citar el texto original: por eso los «Fragmentos» se construyen desde `transcription` y el emparejado cae a coincidencia por palabras clave.
-3. **La base de datos se reinicia en cada despliegue.** En servicios con sistema de archivos efímero (planes gratuitos) hay que **montar un volumen persistente en `/app/data`**; si no, las notas se pierden al actualizar.
-4. **El navegador mostraba versiones viejas.** Añadimos *cache-busting* (`?v=<versión>` en los estáticos y `Cache-Control: no-cache` en el HTML).
-5. **Detalles de contenedor.** El `Dockerfile` respeta la variable `PORT` de la plataforma y expone un `HEALTHCHECK` en `/api/health`.
-6. **Tropiezos con PowerShell (Windows).** No soporta `&&`; usa `;` y `if ($?)`. Para enviar JSON usa `curl.exe --data-binary "@archivo.json"`.
-
-**Pendiente / a verificar por quien continúe:**
-
-- [ ] **Revisión con IA** del documento como persona principiante (instrucción sugerida abajo).
-- [ ] **Prueba con otro grupo** y registro de lo comprendido (aún no ejecutada).
-- [ ] Exportación a **PDF** de los apuntes y del mapa.
-- [ ] Pruebas automatizadas (hoy solo hay verificación de sintaxis en CI).
-- [ ] Migrar de SQLite a una base gestionada si crece el uso.
-
-## Cómo podés contribuir
-
-No hace falta saber programar para aportar. Elegí **una** acción pequeña:
-
-- **Probá la guía:** ejecutá la app en tu equipo y contá en una *issue* en qué paso te trabaste o qué instrucción resultó confusa.
-- **Probá una función:** generá un apunte desde un audio o una foto y compartí si el mapa, la cronología o las tablas aparecieron correctamente.
-- **Creá una variante:** cambiá el prompt de `gemini_service.py` (por ejemplo, para otro idioma o nivel académico) y compartí qué cambiaste y qué resultado obtuviste.
-- **Documentá:** si tuviste que hacer un paso extra en tu sistema operativo, describilo para agregarlo a «Qué aprendimos».
-- **Corregí o completá:** abrí una *issue* o un *Pull Request* con la mejora.
-
-Contá siempre **qué hiciste, qué esperabas y qué obtuviste**. Una pregunta, una corrección o una prueba también son aportes.
+- Clave expuesta en el código: se movió a `.env`; si se expone, rótala en Google AI Studio.
+- Evidencia de conceptos fuera del texto ordenado: los fragmentos se construyen desde `transcription` y se emparejan por palabras clave.
+- Base de datos reiniciada por despliegue: usar volumen persistente en `/app/data`.
+- Navegador con versión vieja: se añadió *cache-busting* (`?v=<versión>`) y `Cache-Control: no-cache`.
+- PowerShell en Windows: usar `;` e `if ($?)` en vez de `&&`; para JSON, `curl.exe --data-binary "@archivo.json"`.
 
 ## Autoría y fuentes
 
-- **Autoría:** Grupo 4 — Universidad Cenfotec (curso IA y Sistemas).
-- **Origen de la experiencia:** desarrollo y despliegue de VisualNotes AI, incluidas las pruebas de mapa conceptual, cronología y tablas, y el endurecimiento de seguridad (clave de API fuera del código, *rate limiting*, cabeceras CSP).
-- **Atribución del prototipo:** el editor del mapa conceptual se adaptó del prototipo del propio **Grupo 4**; se mantiene el crédito en `static/js/conceptmap.js` y `static/js/diagram.js`.
+- **Autoría:** Grupo 4 — Universidad Cenfotec, curso IA y Sistemas.
+- **Origen de la experiencia:** desarrollo, despliegue y pruebas de VisualNotes AI, incluidos mapa conceptual, cronología, tablas y endurecimiento de seguridad (clave por variable de entorno, *rate limiting* y cabeceras CSP).
+- **Atribución:** el editor del mapa conceptual se adaptó del prototipo del Grupo 4; el crédito se conserva en `static/js/conceptmap.js` y `static/js/diagram.js`.
 - **Fuentes y licencias de terceros:**
   - Google Gemini (`google-genai`) — <https://ai.google.dev/gemini-api/docs>
   - Mermaid.js (MIT) — <https://mermaid.js.org>
   - marked.js (MIT) — <https://marked.js.org>
   - Three.js (MIT) — <https://threejs.org>
-- **Reutilización de este recurso:** se comparte bajo **licencia MIT** (ver [`LICENSE`](https://github.com/nexusdigitalsolutionspa-maker/visualnoteia-comunidad/blob/HEAD/LICENSE)); podés copiarlo, adaptarlo y ampliarlo manteniendo la mención de autoría.
-
-## Revisión durante la clase
-
-_(Completar cuando otro grupo revise el recurso.)_
-
-- ¿Qué pudieron comprender sin nuestra ayuda?
-- ¿Qué dudas aparecieron?
-- ¿Qué ajustes hicimos a partir de esa revisión?
-- Tipo de revisión: [ ] de comprensión (documento) · [ ] prueba práctica.
+- **Reutilización:** licencia MIT ([`LICENSE`](../LICENSE)); se puede copiar, adaptar y ampliar manteniendo la mención de autoría.
 
 ---
 
-## Invitación a contribuir
-
-**Probá VisualNotes AI con un material tuyo y contame qué pasó.**
-
-1. Ejecutá la app siguiendo «Cómo hacerlo».
-2. Generá **un** apunte desde un audio, una foto o un texto.
-3. Abrí una **issue** en el repositorio contando: qué usaste, si apareció el mapa conceptual, si la cronología o las tablas se generaron y en qué paso necesitaste ayuda.
-
-¿Preferís otra forma? Comentá en una issue existente, proponé una mejora o abrí un *Pull Request*. **Puede contribuir quien no programa.**
-
-## Publicación en GitHub
-
-Este documento vive en `docs/plan-de-sostenibilidad.md` y está enlazado desde el [`README.md`](../README.md). Para aportes, usá la pestaña **Issues**.
-
-## Evidencia de entrega
-
-- [x] El recurso explica una tarea concreta y para quién sirve.
-- [x] Incluye lo necesario para comenzar y comprobar el resultado.
-- [x] Distingue lo probado (ejecución local, mapa, cronología, tablas, despliegue) de lo pendiente (prueba con otro grupo, PDF, pruebas automatizadas).
-- [ ] Incorpora la revisión de otro grupo.
-- [x] Reconoce la autoría y las fuentes.
-- [x] Está publicado y enlazado desde el README.
-- [x] Propone una contribución pequeña y explica cómo compartirla.
-
-## Reflexión para la puesta en común
-
-1. **¿Qué pudo comprender el otro grupo sin nuestra ayuda?** _(pendiente de la revisión con otro grupo)_
-2. **¿Qué tuvimos que explicar oralmente y ahora debemos documentar?** Los tropiezos de configuración (clave de API, volumen persistente, caché del navegador) y la forma en que la IA entrega la evidencia de cada concepto.
-3. **¿Qué aporte permitiría mejorar el recurso?** Una prueba real desde otra computadora y la exportación de los apuntes a PDF.
-
-**La señal de comunidad aparece cuando alguien usa y mejora lo que otra persona dejó.**
+Relacionado: [Mapa de Comunidad](mapa-de-comunidad.md) · [Bitácora](bitacora.md) · [Retroalimentación](retroalimentacion.md) · [Uso de IA](uso-de-ia.md).
