@@ -12,7 +12,7 @@
 | Persona anfitriona | No se designó una: fue una reunión de trabajo del equipo |
 | Participantes | Los 6 integrantes del Grupo 4, que somos la comunidad por el momento |
 | Formato | Reunión del equipo |
-| Duración | `[completar]` |
+| Duración | 2:00 Horas |
 | Evidencia | Propuestas registradas en el [Mapa de Comunidad](mapa-de-comunidad.md) y en [Entrega-3.md](plan-de-sostenibilidad.md) |
 
 > Los nombres documentados en el mapa son cinco; actualizar esa lista a seis personas cuando se confirme el sexto integrante.
