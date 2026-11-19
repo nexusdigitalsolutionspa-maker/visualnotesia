@@ -64,9 +64,9 @@ Las fechas de los prototipos 2 y 3 quedan fijadas en la [bitácora](docs/bitacor
 
 ### Equipo
 
-**5 integrantes** del **Grupo 4 · IA y Sistemas** (detalle y capacidades en el [Mapa de Comunidad](docs/mapa-de-comunidad.md#3-comunidad)):
+**6 integrantes** del **Grupo 4 · IA y Sistemas** (detalle y capacidades en el [Mapa de Comunidad](docs/mapa-de-comunidad.md#3-comunidad)):
 
-Cesar Adrian Villamil Alzamora · Said Enrique Mendoza Acevedo · Alice Alexandra Rojas Vergara · Samantha Valentina Matos Gutierrez · Josue Antonio Parfait Miranda
+Cesar Adrian Villamil Alzamora · Said Enrique Mendoza Acevedo · Alice Alexandra Rojas Vergara · Samantha Valentina Matos Gutierrez · Josue Antonio Parfait Miranda · Saret Medina
 
 | Rol | Responsable | Siguiente rotación | Responsabilidad |
 |---|---|---|---|
@@ -75,6 +75,7 @@ Cesar Adrian Villamil Alzamora · Said Enrique Mendoza Acevedo · Alice Alexandr
 | Código e IA | Said Enrique Mendoza Acevedo | Josue Antonio Parfait Miranda | Backend, integración con Gemini y despliegue |
 | Revisión de PRs | Samantha Valentina Matos Gutierrez | Cesar Adrian Villamil Alzamora | Revisar cambios y aplicar el checklist |
 | Pruebas y señales | Josue Antonio Parfait Miranda | Alice Alexandra Rojas Vergara | Invitar a probar y registrar comentarios |
+| Evidencia visual y recursos | Saret Medina | Josue Antonio Parfait Miranda | Capturas, imágenes y recursos reutilizables |
 
 La rotación es cada dos semanas según el [plan de sostenibilidad](docs/plan-de-sostenibilidad.md#responsabilidades-compartidas). El [calendario de rituales](docs/plan-de-sostenibilidad.md#calendario-de-rituales) fija la próxima sesión para el miércoles 25 de noviembre de 2026.
 

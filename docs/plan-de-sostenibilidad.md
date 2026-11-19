@@ -16,7 +16,7 @@ Tres acuerdos sostienen el plan:
 
 ## Responsabilidades compartidas
 
-Equipo base: **5 integrantes del Grupo 4 · IA y Sistemas**.
+Equipo base: **6 integrantes del Grupo 4 · IA y Sistemas**.
 
 | Responsabilidad | Responsable actual | Siguiente rotación | Qué hace |
 |---|---|---|---|
@@ -25,6 +25,7 @@ Equipo base: **5 integrantes del Grupo 4 · IA y Sistemas**.
 | Código e IA | Said Enrique Mendoza Acevedo | Josue Antonio Parfait Miranda | Atiende fallos de la app, prompts y despliegue |
 | Revisión de Pull Requests | Samantha Valentina Matos Gutierrez | Cesar Adrian Villamil Alzamora | Revisa cambios, aplica el checklist de `CONTRIBUTING.md` |
 | Pruebas y señales de comunidad | Josue Antonio Parfait Miranda | Alice Alexandra Rojas Vergara | Invita a probar, recoge comentarios y los registra |
+| Evidencia visual y recursos | Saret Medina | Josue Antonio Parfait Miranda | Mantiene capturas, imágenes y recursos reutilizables |
 
 La rotación ocurre **cada dos semanas**, al cierre del ritual de sesión de trabajo. Si una persona no puede asistir, delega su responsabilidad en la persona indicada en "Siguiente rotación" y lo anota en la bitácora.
 
@@ -69,7 +70,7 @@ Si una señal aparece y no está registrada, la persona de documentación la agr
 
 1. Hacer un fork o clonar <https://github.com/nexusdigitalsolutionspa-maker/visualnotesia> y conservar la [licencia MIT](../LICENSE).
 2. Mantener la estructura de la guía: `README.md`, `CONTRIBUTING.md`, `docs/`, `recursos/` e `imagenes/`.
-3. Elegir responsables para las cinco tareas de [Responsabilidades compartidas](#responsabilidades-compartidas) y fijar la primera rotación.
+3. Elegir responsables para las seis tareas de [Responsabilidades compartidas](#responsabilidades-compartidas) y fijar la primera rotación.
 4. Reproducir los cuatro rituales del [calendario](#calendario-de-rituales) durante al menos dos ciclos.
 5. Publicar cada cambio en un Issue o Pull Request y consolidarlo en la bitácora.
 6. Atribuir el origen del proyecto al Grupo 4 — Universidad Cenfotec y mantener las licencias de terceros del [anexo técnico](#anexo-técnico-ejecutar-visualnotes-ai).

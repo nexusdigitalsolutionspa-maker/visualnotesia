@@ -33,13 +33,14 @@ El dominio que reúne al grupo es la **inteligencia artificial aplicada a la edu
 
 ### Participantes actuales
 
-El proyecto está siendo desarrollado por **5 integrantes**:
+El proyecto está siendo desarrollado por **6 integrantes**:
 
 - Cesar Adrian Villamil Alzamora
 - Said Enrique Mendoza Acevedo
 - Alice Alexandra Rojas Vergara
 - Samantha Valentina Matos Gutierrez
 - Josue Antonio Parfait Miranda
+- Saret Medina
 
 El grupo reúne diferentes experiencias relacionadas con inteligencia artificial, programación, visión artificial, desarrollo web, diseño e integración de sistemas.
 
@@ -212,13 +213,14 @@ Realizar una reunión del equipo para:
 
 ### Responsables
 
-**Grupo 4 · IA y Sistemas** (5 integrantes). La rotación queda detallada en el [plan de sostenibilidad](plan-de-sostenibilidad.md#responsabilidades-compartidas):
+**Grupo 4 · IA y Sistemas** (6 integrantes). La rotación queda detallada en el [plan de sostenibilidad](plan-de-sostenibilidad.md#responsabilidades-compartidas):
 
 - Facilitación y bienvenida: Cesar Adrian Villamil Alzamora; siguiente rotación: Said Enrique Mendoza Acevedo.
 - Documentación: Alice Alexandra Rojas Vergara; siguiente rotación: Samantha Valentina Matos Gutierrez.
 - Código e IA: Said Enrique Mendoza Acevedo; siguiente rotación: Josue Antonio Parfait Miranda.
 - Revisión: Samantha Valentina Matos Gutierrez; siguiente rotación: Cesar Adrian Villamil Alzamora.
 - Pruebas y señales de comunidad: Josue Antonio Parfait Miranda; siguiente rotación: Alice Alexandra Rojas Vergara.
+- Evidencia visual y recursos: Saret Medina; siguiente rotación: Josue Antonio Parfait Miranda.
 
 ### Fecha
 

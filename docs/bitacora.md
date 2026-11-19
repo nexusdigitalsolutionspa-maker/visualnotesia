@@ -44,7 +44,7 @@ Antes de la reunión del 4 de noviembre, el equipo pasó por tres versiones del 
 | Estado | Ejecutada |
 | Fecha | 2026-10-01 |
 | Persona anfitriona | Cesar Adrian Villamil Alzamora |
-| Participantes | Los 5 integrantes del Grupo 4 y compañeros de la clase |
+| Participantes | Los 6 integrantes del Grupo 4 y compañeros de la clase |
 | Formato | Reunión de clase |
 | Duración | 1:00 |
 | Evidencia | [Mapa de Comunidad](mapa-de-comunidad.md) |
@@ -63,7 +63,7 @@ Antes de la reunión del 4 de noviembre, el equipo pasó por tres versiones del 
 | Estado | Ejecutada |
 | Fecha | 2026-10-04 |
 | Persona anfitriona | Cesar Adrian Villamil Alzamora |
-| Participantes | Los 5 integrantes del Grupo 4 |
+| Participantes | Los 6 integrantes del Grupo 4 |
 | Formato | Reunión del equipo |
 | Duración | 1:30 |
 | Evidencia | [Mapa de Comunidad](mapa-de-comunidad.md) |
@@ -82,7 +82,7 @@ Antes de la reunión del 4 de noviembre, el equipo pasó por tres versiones del 
 | Estado | Ejecutada |
 | Fecha | 2026-10-10 |
 | Persona anfitriona | Said Enrique Mendoza Acevedo |
-| Participantes | Los 5 integrantes del Grupo 4 |
+| Participantes | Los 6 integrantes del Grupo 4 |
 | Formato | Reunión del equipo |
 | Duración | 1:00 |
 | Evidencia | [Mapa de Comunidad](mapa-de-comunidad.md#4-práctica-compartida) |
@@ -101,7 +101,7 @@ Antes de la reunión del 4 de noviembre, el equipo pasó por tres versiones del 
 | Estado | Ejecutada |
 | Fecha | 2026-10-15 |
 | Persona anfitriona | Said Enrique Mendoza Acevedo |
-| Participantes | Los 5 integrantes del Grupo 4 |
+| Participantes | Los 6 integrantes del Grupo 4 |
 | Formato | Reunión del equipo |
 | Duración | 1:30 |
 | Evidencia | [CONTRIBUTING.md](../CONTRIBUTING.md), <https://visualnotesia.nexusdigitalsolutions.group/>, [Prototipo 2](../imagenes/Prototipo2.png) |
@@ -120,7 +120,7 @@ Antes de la reunión del 4 de noviembre, el equipo pasó por tres versiones del 
 | Estado | Ejecutada |
 | Fecha | 2026-10-16 |
 | Persona anfitriona | Alice Alexandra Rojas Vergara |
-| Participantes | Los 5 integrantes del Grupo 4 y usuarios de prueba externos |
+| Participantes | Los 6 integrantes del Grupo 4 y usuarios de prueba externos |
 | Formato | Pruebas de uso y publicación |
 | Duración | 1:00 |
 | Evidencia | [Repositorio en GitHub](https://github.com/nexusdigitalsolutionspa-maker/visualnotesia) |
@@ -139,7 +139,7 @@ Antes de la reunión del 4 de noviembre, el equipo pasó por tres versiones del 
 | Estado | Ejecutada |
 | Fecha | 2026-10-20 |
 | Persona anfitriona | Alice Alexandra Rojas Vergara |
-| Participantes | Los 5 integrantes del Grupo 4 |
+| Participantes | Los 6 integrantes del Grupo 4 |
 | Formato | Reunión del equipo |
 | Duración | 1:30 |
 | Evidencia | [Plan de sostenibilidad](plan-de-sostenibilidad.md), [escalera de participación](../CONTRIBUTING.md#escalera-de-participación) |
@@ -158,7 +158,7 @@ Antes de la reunión del 4 de noviembre, el equipo pasó por tres versiones del 
 | Estado | Ejecutada |
 | Fecha | 2026-10-22 |
 | Persona anfitriona | Samantha Valentina Matos Gutierrez |
-| Participantes | Los 5 integrantes del Grupo 4 |
+| Participantes | Los 6 integrantes del Grupo 4 |
 | Formato | Reunión del equipo |
 | Duración | 0:30 |
 | Evidencia | Registro en esta bitácora |
@@ -177,7 +177,7 @@ Antes de la reunión del 4 de noviembre, el equipo pasó por tres versiones del 
 | Estado | Ejecutada |
 | Fecha | 2026-10-29 |
 | Persona anfitriona | Samantha Valentina Matos Gutierrez |
-| Participantes | Los 5 integrantes del Grupo 4 |
+| Participantes | Los 6 integrantes del Grupo 4 |
 | Formato | Reunión del equipo |
 | Duración | 1:00 |
 | Evidencia | [Prototipo 3](../imagenes/Prototipo3.png), [recursos](../recursos/) |
@@ -196,7 +196,7 @@ Antes de la reunión del 4 de noviembre, el equipo pasó por tres versiones del 
 | Estado | Ejecutada |
 | Fecha | 2026-11-03 al 2026-11-05 (sesión del equipo el 2026-11-04) |
 | Persona anfitriona | Josue Antonio Parfait Miranda |
-| Participantes | Los 5 integrantes del Grupo 4 |
+| Participantes | Los 6 integrantes del Grupo 4 |
 | Formato | Reunión del equipo |
 | Duración | 2:00 Horas (sesión del 4 de noviembre) |
 | Evidencia | [Mapa de Comunidad](mapa-de-comunidad.md), [Plan de sostenibilidad](plan-de-sostenibilidad.md) |
@@ -215,7 +215,7 @@ Antes de la reunión del 4 de noviembre, el equipo pasó por tres versiones del 
 | Estado | Ejecutada |
 | Fecha | 2026-11-14 |
 | Persona anfitriona | Cesar Adrian Villamil Alzamora |
-| Participantes | Los 5 integrantes del Grupo 4 |
+| Participantes | Los 6 integrantes del Grupo 4 |
 | Formato | Reunión del equipo |
 | Duración | 2:30 |
 | Evidencia | [README](../README.md), [Mapa de Comunidad](mapa-de-comunidad.md), [recursos](../recursos/), [imagenes](../imagenes/) |
@@ -234,7 +234,7 @@ Antes de la reunión del 4 de noviembre, el equipo pasó por tres versiones del 
 | Estado | Ejecutada |
 | Fecha | 2026-11-19 |
 | Persona anfitriona | Alice Alexandra Rojas Vergara |
-| Participantes | Los 5 integrantes del Grupo 4 |
+| Participantes | Los 6 integrantes del Grupo 4 |
 | Formato | Publicación en GitHub |
 | Duración | 1:00 |
 | Evidencia | [README](../README.md), [Mapa de Comunidad](mapa-de-comunidad.md), [Plan de sostenibilidad](plan-de-sostenibilidad.md), [recursos](../recursos/), [imagenes](../imagenes/) |
