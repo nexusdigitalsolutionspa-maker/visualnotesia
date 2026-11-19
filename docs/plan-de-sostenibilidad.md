@@ -86,6 +86,20 @@ Si el equipo original ya no está disponible, el repositorio, la licencia y este
 - [x] Procedimiento para que otro grupo copie o continúe la comunidad.
 - [x] Documentación publicada y enlazada desde el README.
 
+## Pendientes del siguiente ciclo
+
+Estos trabajos no forman parte de lo ya entregado: son el plan de mejora continúa. Se cierran cuando quede una huella visible en el repositorio.
+
+| Pendiente | Responsable | Fecha prevista | Criterio para cerrarlo |
+|---|---|---|---|
+| [ ] Revisar el plan como persona principiante con IA | Samantha Valentina Matos Gutierrez | 2026-11-25 | Lista de dudas y ajustes registrada en la [bitácora](bitacora.md) |
+| [ ] Republicar la landing con el repositorio ya público | Cesar Adrian Villamil Alzamora | 2026-11-25 | Sitio desplegado sin el mensaje "próximamente" |
+| [ ] Probar la app con otro grupo y registrar lo comprendido | Josue Antonio Parfait Miranda | 2026-11-28 | Comentario en el [Issue #1](https://github.com/nexusdigitalsolutionspa-maker/visualnotesia/issues/1) y fila en [retroalimentación](retroalimentacion.md) |
+| [ ] Exportar apuntes y mapa a PDF | Alice Alexandra Rojas Vergara | 2026-12-09 | Pull Request revisado y evidencia en la bitácora |
+| [ ] Ampliar las pruebas automatizadas en CI | Said Enrique Mendoza Acevedo | 2026-12-09 | `.github/workflows/ci.yml` con más verificaciones |
+| [ ] Confirmar la persistencia de la base de datos en producción | Said Enrique Mendoza Acevedo | 2026-12-12 | Resultado documentado en el [anexo técnico](#anexo-técnico-ejecutar-visualnotes-ai) |
+| [ ] Dar seguimiento semanal a los comentarios del Issue #1 | Saret Medina | Cada semana | Respuestas y nuevos aportes reflejados en [retroalimentación](retroalimentacion.md) |
+
 ## Revisión registrada
 
 La revisión interna del 19 de noviembre comprobó que una persona ajena al equipo podía comprender el propósito con el README y la guía rápida. Las dudas que aparecieron fueron sobre la clave de Gemini y sobre la persistencia de la base de datos; ambas quedaron explicadas en el [anexo técnico](#anexo-técnico-ejecutar-visualnotes-ai). Como ajuste se corrigieron los enlaces del repositorio anterior y se añadió el canal abierto de comentarios en el Issue #1.

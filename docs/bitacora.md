@@ -244,11 +244,17 @@ Antes de la reunión del 4 de noviembre, el equipo pasó por tres versiones del 
 - **Hipótesis → observación:** publicar los archivos era el último paso → además de publicarlos hubo que comprobar que estuvieran enlazados y crear un canal abierto de retroalimentación.
 - **Ajuste:** presentar el proyecto en 5 minutos e incorporar los comentarios que lleguen al Issue y a la retroalimentación.
 
-## Actividades no realizadas
+## Actividades no realizadas y pendientes
 
-| Actividad prevista | Estado | Dónde continúa |
-|---|---|---|
-| Ninguna actividad de la entrega quedó sin realizar | Ejecutada o consolidada en esta bitácora | Las pruebas con nuevos grupos y la exportación a PDF se organizan en el [plan de sostenibilidad](plan-de-sostenibilidad.md#calendario-de-rituales) |
+| Actividad | Estado | Responsable | Fecha prevista | Cómo se cerrará |
+|---|---|---|---|---|
+| Revisión de comprensión del plan como persona principiante | No ejecutada | Samantha Valentina Matos Gutierrez | 2026-11-25 | Entrada nueva en esta bitácora con las dudas y los ajustes |
+| Republicar la landing con el repositorio ya público | No ejecutada | Cesar Adrian Villamil Alzamora | 2026-11-25 | Captura del sitio actualizado en la retroalimentación |
+| Prueba de VisualNotes AI con otro grupo | No ejecutada | Josue Antonio Parfait Miranda | 2026-11-28 | Comentario en el [Issue #1](https://github.com/nexusdigitalsolutionspa-maker/visualnotesia/issues/1) y fila nueva en la retroalimentación |
+| Exportación del resumen y el mapa a PDF | No ejecutada | Alice Alexandra Rojas Vergara | 2026-12-09 | Pull Request revisado y registro en esta bitácora |
+| Pruebas automatizadas además de la verificación de sintaxis | No ejecutada | Said Enrique Mendoza Acevedo | 2026-12-09 | Workflow ampliado en `.github/workflows/ci.yml` |
+| Verificar persistencia de la base de datos en el despliegue | No ejecutada | Said Enrique Mendoza Acevedo | 2026-12-12 | Anexo técnico del plan actualizado con el resultado |
+| Registrar las respuestas nuevas del Issue #1 | En curso | Saret Medina | Cada semana | Retroalimentación y bitácora actualizadas |
 
 ---
 
