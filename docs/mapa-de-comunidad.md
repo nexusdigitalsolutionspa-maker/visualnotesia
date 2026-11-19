@@ -1,58 +1,250 @@
-# Entrega 1 · Mapa de Comunidad — VisualNotes AI
+# Reto de clase 2 · Mapa de Comunidad
 
-> Estado: propuesta construida a partir del Reto 1 y del código del repositorio.
-> Los campos marcados `[validar con el equipo]` deben confirmarse antes de entregar.
+## Nombre del proyecto
 
-## Dominio
+**VisualNotes AI**  
+Prototipo del Grupo 4 · IA y Sistemas
 
-**Práctica compartida:** convertir material de clase (audios, fotos de pizarra y texto) en kits de estudio reutilizables con ayuda de IA, y compartirlos para que otras personas puedan repasar sin depender de la grabación original.
+---
 
-**Necesidad real atendida:** en el curso, los apuntes quedan dispersos entre grabaciones, fotos y documentos. Una persona que se quedó con dudas, se perdió una clase o quiere repasar en su propio ritmo no tiene un punto de partida ordenado. El kit de estudio reduce esa fricción y puede pasar de una persona a otra.
+## 1. Situación e intención
 
-**Límite del dominio:** la comunidad no se define por la herramienta (`visualnotesia`), sino por la práctica de producir, revisar y compartir esos kits. La herramienta es el soporte, no el fin.
+### Situación
 
-## Intención, función y prueba
+A muchos estudiantes universitarios les resulta difícil tomar apuntes rápidamente durante una clase y posteriormente organizar esa información de una manera que facilite su comprensión y repaso.
 
-> Queremos crear **una comunidad de estudiantes y docentes que producen, revisan y comparten kits de estudio generados a partir de material de clase**, para que **cualquier estudiante pueda repasar un tema y reutilizar el trabajo de otra persona** pueda **hacerlo sin necesitar la grabación original ni pedirle permiso a quien generó el apunte**.
+### Intención
 
-**Prueba concreta:** una persona nueva clona el repo, sigue la [guía rápida](../recursos/guia-de-uso-rapida.md), genera un kit con una fuente propia, lo revisa y lo propone como recurso mediante un Pull Request. Si puede hacerlo sin preguntarnos, la infraestructura funciona.
+Queremos crear una herramienta web que ayude a estudiantes universitarios a procesar información de sus clases y organizarla visualmente, permitiéndoles revisar los conceptos principales de una manera más estructurada y a su propio ritmo.
 
-## Participantes
+### Para quién
 
-| Grupo | Quiénes son | Qué buscan | Qué aportan |
-|---|---|---|---|
-| **Núcleo** | Grupo 4 — Universidad Cenfotec `[validar nombres y roles]` | Que la práctica continúe después del curso | Código, documentación, decisiones de diseño y apertura de los primeros Issues |
-| **Activos** | Compañeros de clase que probaron la app `[validar]` | Kits listos para repasar y un lugar donde reportar fallos | Pruebas reales, reportes de errores, mejoras a la documentación |
-| **Periféricos** | Estudiantes que descargan o leen los recursos | Apuntes y quizzes sin tener que generarlos desde cero | Reutilización, comentarios breves, señales de qué recurso sirve |
-| **Externos** | Docentes, otros grupos y personas que lleguen por GitHub `[validar]` | Adaptar la práctica a sus propios cursos | Forks, nuevos recursos, mirada outside del proyecto |
+La propuesta está dirigida principalmente a **estudiantes universitarios**, aunque también podría involucrar a docentes como usuarios o participantes en etapas posteriores.
 
-> Nota: reemplazar los marcadores por nombres reales solo si las personas autorizaron aparecer. La guía del proyecto pide evitar datos personales no autorizados.
+---
 
-## Trayectorias de participación
+## 2. Dominio
 
-| Nivel | Acción concreta en este repositorio | Qué cambia para la persona |
-|---|---|---|
-| 1. Observar | Leer el [README](../README.md) y los [recursos](../recursos/) | Entiende para qué sirve la comunidad |
-| 2. Probar | Ejecutar la app con Docker o local y generar un kit propio | Pasa de lector a usuario |
-| 3. Contribuir | Abrir un Issue con un error o enviar un PR con un recurso | Deja de consumir y empieza a aportar |
-| 4. Facilitar | Dar la bienvenida, revisar PRs y coordinar una sesión | Sostiene la comunidad sin el núcleo original |
+El dominio que reúne al grupo es la **inteligencia artificial aplicada a la educación**, especialmente el procesamiento de información y la visualización interactiva del conocimiento.
 
-La [escalera de participación](../CONTRIBUTING.md#escalera-de-participación) explica cada paso. Cada nivel tiene una acción mínima, para que nadie tenga que adivinar cómo empezar.
+---
 
-## Rituales y espacios
+## 3. Comunidad
 
-| Ritual | Frecuencia propuesta | Espacio | Estado |
-|---|---|---|---|
-| Show & Tell de 30 minutos: alguien muestra un kit y cuenta qué ajustó | Quincenal `[validar]` | Sala del curso / videollamada | Propuesto |
-| Revisión de Issues y PRs nuevos | Semanal `[validar]` | Pestaña Issues / Pull requests de GitHub | Propuesto |
-| Actualización de la bitácora | Después de cada activación | [docs/bitacora.md](bitacora.md) | Propuesto |
+### Participantes actuales
 
-> Estos rituales son una propuesta de diseño. No se registran como ejecutados hasta que exista evidencia real en la [bitácora](bitacora.md).
+El proyecto está siendo desarrollado por:
 
-## Cómo se conecta con el resto del repositorio
+- Cesar Adrian Villamil Alzamora
+- Said Enrique Mendoza Acevedo
+- Alice Alexandra Rojas Vergara
+- Samantha Valentina Matos Gutierrez
+- Josue Antonio Parfait Miranda
 
-- [Mapa de Comunidad](mapa-de-comunidad.md) — esta entrega.
-- [Recursos reutilizables](../recursos/) — Entrega 2.
-- [Plan de evolución y sostenibilidad](plan-de-sostenibilidad.md) — Entrega 3.
-- [Bitácora de activación](bitacora.md) — evidencia real.
-- [Retroalimentación](retroalimentacion.md) y [uso de IA](uso-de-ia.md) — transparencia.
+El grupo reúne diferentes experiencias relacionadas con inteligencia artificial, programación, visión artificial, desarrollo web, diseño e integración de sistemas.
+
+### Posibles participantes
+
+En el desarrollo y prueba del proyecto podrían participar:
+
+- Estudiantes universitarios de diferentes carreras.
+- Docentes.
+- Personas con conocimientos de desarrollo web.
+- Personas interesadas en inteligencia artificial y educación.
+
+### Capacidades que podrían aportar
+
+Entre las capacidades disponibles en el grupo se encuentran:
+
+- Programación y desarrollo web.
+- Inteligencia artificial.
+- Visión artificial.
+- Diseño.
+- Integración de sistemas.
+- Experiencia en proyectos tecnológicos.
+
+---
+
+## 4. Práctica compartida
+
+La práctica compartida consistirá en **experimentar, probar y mejorar el prototipo de manera colaborativa**.
+
+El grupo podrá realizar pruebas con información similar a la que un estudiante utilizaría durante una clase, observar los resultados, compartir retroalimentación y realizar modificaciones.
+
+Los recursos utilizados podrán incluir código, herramientas de inteligencia artificial, interfaces web, materiales de prueba y documentación del proyecto.
+
+La práctica podrá repetirse durante el desarrollo del proyecto mediante ciclos de:
+
+**Construir → Probar → Observar → Compartir → Mejorar**
+
+---
+
+## 5. Trayectorias de participación
+
+Una persona podría incorporarse progresivamente a la comunidad mediante diferentes niveles de participación:
+
+### Observar
+
+Probar el prototipo con información sencilla y observar cómo organiza los conceptos.
+
+### Preguntar
+
+Compartir dudas y comentarios sobre si la estructura generada facilita la comprensión de la información.
+
+### Contribuir
+
+Aportar código, ideas de diseño, ejemplos de uso, reglas para organizar la información o propuestas de nuevas funcionalidades.
+
+### Acompañar
+
+Ayudar a otros participantes a utilizar el prototipo, explicar su funcionamiento y compartir aprendizajes obtenidos durante las pruebas.
+
+---
+
+## 6. Representación
+
+### Flujo inicial de la propuesta
+
+```text
+[Estudiante / Docente]
+          ↓
+   [Audio / Imagen / Texto]
+          ↓
+ [Procesamiento mediante IA]
+          ↓
+ [Transcripción / Extracción]
+          ↓
+ [Conceptos principales]
+          ↓
+ [Mapa conceptual visual]
+          ↓
+     [Interfaz web]
+          ↓
+   [Registro de apuntes]
+          ↓
+ [Prueba y retroalimentación]
+          ↺
+ [Mejora del prototipo]
+```
+
+### Mapa de comunidad
+
+```text
+                    DOMINIO
+          IA aplicada a la educación
+                       │
+                       ↓
+                  COMUNIDAD
+       ┌───────────────┼───────────────┐
+       │               │               │
+   Estudiantes       Equipo          Docentes
+                   desarrollador
+       │               │               │
+       └───────────────┼───────────────┘
+                       ↓
+                    PRÁCTICA
+          Probar → Compartir → Mejorar
+                       │
+                       ↓
+                VisualNotes AI
+                       │
+                       ↺
+                Nuevas pruebas
+                 y aprendizajes
+
+Participación:
+Observar → Preguntar → Contribuir → Acompañar
+```
+
+---
+
+## 7. Prototipo y función
+
+### Prototipo
+
+Se realizó una exploración inicial de una interfaz web para VisualNotes AI. La primera versión permite introducir información en forma de texto y generar una representación visual sencilla de conceptos mediante reglas básicas.
+
+Esta exploración funciona como una primera aproximación al concepto del proyecto y no representa todavía la implementación definitiva que adoptará el grupo.
+
+### Función
+
+La primera versión debe ser capaz de **recibir información relacionada con una clase y generar una representación visual de los conceptos principales**, de manera que pueda servir como apoyo para organizar y revisar los apuntes.
+
+### Pendiente
+
+El grupo deberá acordar el alcance definitivo de la primera versión, las tecnologías que utilizará y las funcionalidades que se incorporarán.
+
+---
+
+## 8. Prueba y aprendizaje
+
+### Qué esperábamos
+
+Esperábamos explorar una forma de transformar información de una clase en una representación visual que ayudara a identificar y organizar conceptos.
+
+### Qué hicimos
+
+Se realizó una primera exploración de una interfaz web y de una generación sencilla de nodos a partir de texto. Esta versión utiliza reglas básicas para identificar palabras y mostrarlas como elementos de un mapa visual.
+
+### Qué aprendimos
+
+La exploración permitió identificar que una representación visual puede servir como punto de partida para la propuesta, pero que una herramienta útil necesitará métodos más adecuados para identificar conceptos y relaciones entre ellos.
+
+### Qué queda por probar
+
+El equipo deberá realizar una prueba conjunta con información similar a unos apuntes reales y observar si la representación facilita la comprensión y organización de los conceptos.
+
+A partir de esa prueba se podrán determinar los cambios necesarios.
+
+---
+
+## 9. Continuidad
+
+### Próxima acción
+
+Realizar una reunión del equipo para:
+
+1. Acordar la función exacta que se probará en la primera versión.
+2. Definir las tecnologías y herramientas que se utilizarán.
+3. Distribuir las tareas según las capacidades e intereses de cada integrante.
+4. Definir el procedimiento de prueba.
+5. Establecer los siguientes cambios al prototipo.
+
+### Responsables
+
+**Grupo 4 · IA y Sistemas**
+
+### Fecha
+
+**Próxima reunión del equipo: miércoles [completar fecha].**
+
+La fecha y las responsabilidades específicas se actualizarán después de la reunión del grupo.
+
+---
+
+## 10. Estado del proyecto
+
+### Realizado
+
+- Definición inicial de la situación.
+- Definición de una intención compartida.
+- Identificación del dominio y de la comunidad.
+- Definición inicial de las trayectorias de participación.
+- Diseño inicial de la propuesta.
+- Exploración de un primer prototipo web.
+- Primera exploración de una representación visual de conceptos.
+
+### Capturas de pantalla del prototipo realizado
+
+- [Captura de pantalla 1](https://drive.google.com/file/d/1XfGAUZAWNpR6qqGyO_2i7_Aq6qypwKYX/view?usp=sharing)
+- [Captura de pantalla 2](https://drive.google.com/file/d/1cJNtPGNwVAJJDsYKXHuqGnvOExQtiFDF/view?usp=sharing)
+- [Captura de pantalla 3](https://drive.google.com/file/d/1JdeD6X7zC09hWVqRgZADwpofUNVQekjZ/view?usp=sharing)
+
+### Pendiente
+
+- Acordar la función definitiva de la primera versión.
+- Definir las tecnologías que utilizará el grupo.
+- Realizar una prueba conjunta.
+- Analizar los resultados de la prueba.
+- Incorporar las modificaciones acordadas.
+- Definir responsabilidades y próximos encuentros.

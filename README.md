@@ -7,29 +7,70 @@ Plataforma web universitaria que convierte **audios de clase**, **fotos de pizar
 
 ---
 
-## 🌱 Nuestra comunidad de práctica
+## 🌱 Comunidad de práctica y proyecto final
 
-VisualNotes AI también es una comunidad de práctica: producimos, revisamos y compartimos kits de estudio para que otra persona pueda continuarlos sin nosotros. Para empezar, sigue la [guía rápida](recursos/guia-de-uso-rapida.md) y la [escalera de participación](CONTRIBUTING.md#escalera-de-participación).
+VisualNotes AI es también una comunidad de práctica: producimos, revisamos y compartimos kits de estudio para que otra persona pueda continuarlos sin nosotros.
 
-| Documento | Qué contiene |
+### Cómo empezar a participar (resumen de [CONTRIBUTING.md](CONTRIBUTING.md))
+
+La escalera es **observar → probar → aportar → facilitar**. Prueba la aplicación con la [guía rápida](recursos/guia-de-uso-rapida.md), cuenta en un **Issue** qué funcionó o en qué paso te trabaste y, si quieres ir más lejos, envía un **Pull Request** con código o documentación. No subas `.env`, claves ni datos personales.
+
+Para leer más: [CONTRIBUTING.md](CONTRIBUTING.md).
+
+### Estructura del repositorio
+
+```
+visualnotesia/
+├── README.md                     ← propósito y cómo empezar a participar
+├── CONTRIBUTING.md               ← escalera de participación y cómo contribuir
+├── docs/
+│   ├── mapa-de-comunidad.md      ← Entrega 1
+│   ├── bitacora.md               ← activaciones, evidencias y ajustes
+│   ├── plan-de-sostenibilidad.md ← Entrega 3
+│   ├── retroalimentacion.md      ← qué comentarios recibieron y qué cambiaron
+│   └── uso-de-ia.md              ← qué hizo la IA y qué decidieron ustedes
+├── recursos/                     ← Entrega 2 (al menos 2 recursos)
+└── imagenes/                     ← fotos, capturas o bocetos (opcional)
+```
+
+### Entregas y documentos
+
+| Documento | Qué contiene según la guía |
 |---|---|
-| [Mapa de Comunidad](docs/mapa-de-comunidad.md) | Entrega 1 · dominio, participantes, trayectorias y rituales |
-| [Recursos reutilizables](recursos/) | Entrega 2 · guía rápida y plantilla de kit de estudio |
-| [Plan de evolución y sostenibilidad](docs/plan-de-sostenibilidad.md) | Entrega 3 · rotación de roles y continuidad |
-| [Bitácora de activación](docs/bitacora.md) | Evidencia real de las activaciones |
-| [Retroalimentación](docs/retroalimentacion.md) | Comentarios recibidos y cambios aplicados |
-| [Uso de IA](docs/uso-de-ia.md) | Ideas propias, sugerencias de IA y decisiones del equipo |
+| [Entrega 1 · Mapa de Comunidad](docs/mapa-de-comunidad.md) | Dominio, intención, participantes, trayectorias de participación, rituales y espacios |
+| [Entrega 2 · Recursos reutilizables](recursos/) | Recursos con origen, usables sin el equipo y enlazados desde el README |
+| [Entrega 3 · Plan de evolución y sostenibilidad](docs/plan-de-sostenibilidad.md) | Responsabilidades compartidas, próximos rituales, bienvenida, señales reales y continuidad |
+| [Bitácora de activación](docs/bitacora.md) | Activación ejecutada o ensayada, evidencias y ajustes |
+| [Retroalimentación](docs/retroalimentacion.md) | Quién comentó, qué dijo, qué ajustamos y dónde se ve el cambio |
+| [Uso de IA](docs/uso-de-ia.md) | Ideas propias, sugerencias de la IA y decisiones del equipo |
 
-### Equipo y roles
+#### Recursos de la Entrega 2
 
-| Rol | Persona | Responsabilidad |
+- [Cómo ejecutar y continuar VisualNotes AI](recursos/como-ejecutar-y-continuar-visualnotes-ai.md) — recurso del Grupo 4: cómo levantar la app, comprobar el resultado y contribuir.
+- [Guía rápida: de una clase a un kit de estudio](recursos/guia-de-uso-rapida.md) — origen: experiencia de una persona nueva que no sabía por dónde empezar.
+- [Plantilla de kit de estudio](recursos/plantilla-kit-de-estudio.md) — origen: falta de un formato común al compartir los resultados de Gemini.
+
+### Imágenes
+
+| Imagen | Archivo |
+|---|---|
+| ![Imagen 1](imagenes/recurso1.png) | `imagenes/recurso1.png` |
+| ![Imagen 2](imagenes/recurso2.png) | `imagenes/recurso2.png` |
+
+### Equipo
+
+Integrantes del **Grupo 4 · IA y Sistemas** (detalle y capacidades en el [Mapa de Comunidad](docs/mapa-de-comunidad.md#3-comunidad)):
+
+Cesar Adrian Villamil Alzamora · Said Enrique Mendoza Acevedo · Alice Alexandra Rojas Vergara · Samantha Valentina Matos Gutierrez · Josue Antonio Parfait Miranda
+
+| Rol | Responsable | Responsabilidad |
 |---|---|---|
 | Facilitación | `[completar]` | Coordinar sesiones y dar la bienvenida |
 | Documentación | `[completar]` | Bitácora y recursos |
 | Código e IA | `[completar]` | Backend, integración con Gemini y despliegue |
 | Revisión | `[completar]` | Revisar PRs y observar las señales de comunidad |
 
-> Completar los nombres solo con autorización de cada persona. La rotación de roles está en el [plan de sostenibilidad](docs/plan-de-sostenibilidad.md#responsabilidades-compartidas).
+> La rotación de roles está en el [plan de sostenibilidad](docs/plan-de-sostenibilidad.md#responsabilidades-compartidas).
 
 ---
 
@@ -81,7 +122,8 @@ A partir de una sola fuente (audio, imagen o texto):
 │   └── js/ (app.js, audio.js, diagram.js, auth.js)
 ├── marketing/                 # Scripts de capturas para el video
 ├── docs/                      # Mapa, bitácora, sostenibilidad, retroalimentación e IA
-├── recursos/                  # Guía rápida y plantilla de kit de estudio
+├── recursos/                  # Recursos reutilizables de la Entrega 2
+├── imagenes/                  # Capturas y evidencia visual
 ├── Dockerfile
 ├── docker-compose.yml
 ├── render.yaml

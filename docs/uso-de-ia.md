@@ -7,7 +7,7 @@ Este archivo distingue tres cosas: las ideas del equipo, lo que sugirió la IA y
 - La definición del dominio: producir y compartir kits de estudio a partir de material de clase.
 - La elección de fuentes soportadas (audio, imagen y texto) y de salidas (transcripción, apuntes, mapa conceptual, resumen, quiz y Markdown/PDF), tal como están implementadas en `gemini_service.py` y descritas en el [README](../README.md).
 - La decisión de usar GitHub como infraestructura de la comunidad: Issues, Pull Requests y documentación versionada.
-- La elección de los dos recursos reutilizables: [guía rápida](../recursos/guia-de-uso-rapida.md) y [plantilla de kit de estudio](../recursos/plantilla-kit-de-estudio.md).
+- La elección de los recursos reutilizables: [cómo ejecutar y continuar VisualNotes AI](../recursos/como-ejecutar-y-continuar-visualnotes-ai.md), [guía rápida](../recursos/guia-de-uso-rapida.md) y [plantilla de kit de estudio](../recursos/plantilla-kit-de-estudio.md).
 - Las decisiones de diseño y seguridad del producto (clave por variable de entorno, `.env` ignorado, rate limiting y cabeceras HTTP) ya presentes en el repositorio antes de este proyecto final.
 
 ## 2. Sugerencias de la IA
@@ -24,7 +24,7 @@ Este archivo distingue tres cosas: las ideas del equipo, lo que sugirió la IA y
 |---|---|---|
 | Redactar la bitácora con una activación de ejemplo | **Rechazado.** La bitácora queda como plantilla con campos `[completar]` | La guía pide registrar solo lo ocurrido; inventar evidencia empeora el proyecto |
 | Escribir nombres y fechas concretas en el mapa y el plan | **Ajustado.** Se usan marcadores y roles | Evita datos personales no autorizados y datos que aún no se validaron |
-| Crear más recursos de forma automática | **Reducido a dos** | Un recurso útil y revisado vale más que varios borradores |
+| Crear más recursos de forma automática | **Ajustado.** Se integró el recurso real del equipo y se conservaron dos apoyos generados | El recurso del equipo tiene origen y experiencia real; los otros dos cubren arranque y formato |
 | Renombrar el repositorio a `mi-comunidad` | **Pendiente de decidir** | El repo oficial del grupo ya es `visualnotesia` y ya es público en GitHub |
 
 ## 4. IA dentro del producto
