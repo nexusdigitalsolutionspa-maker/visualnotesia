@@ -53,6 +53,9 @@ visualnotesia/
 
 | Imagen | Archivo |
 |---|---|
+| ![Prototipo 1](imagenes/Prototipo1.png) | `imagenes/Prototipo1.png` — primera versión (2026-10-01) |
+| ![Prototipo 2](imagenes/Prototipo2.png) | `imagenes/Prototipo2.png` — segunda versión (2026-10-15) |
+| ![Prototipo 3](imagenes/Prototipo3.png) | `imagenes/Prototipo3.png` — tercera versión (2026-10-29) |
 | ![Imagen 1](imagenes/recurso1.png) | `imagenes/recurso1.png` |
 | ![Imagen 2](imagenes/recurso2.png) | `imagenes/recurso2.png` |
 
