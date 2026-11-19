@@ -1,25 +1,23 @@
 # Retroalimentación recibida e incorporada — VisualNotes AI
 
 > Los comentarios se registran con su origen, el cambio que produjeron y el lugar del repositorio donde se ve ese cambio.
-> Las imágenes `form1.jpeg`, `form2.jpeg` y `form3.jpeg` son la evidencia de los formularios de retroalimentación del proyecto (ver [Evidencia visual](#evidencia-visual)).
+> La imagen de la sección [Evidencia visual](#evidencia-visual) reúne las sugerencias registradas en estas sesiones.
 
-| # | Momento | Quién comentó | Qué dijo / qué se observó | Qué ajustamos | Dónde se ve el cambio | Evidencia |
-|---|---|---|---|---|---|---|
-| 1 | Reto 1 · Imaginar el cambio | Equipo y compañeros de clase (1 de octubre) | Hacía falta una herramienta para organizar los apuntes de clase | Definimos el dominio y la intención del proyecto | [Mapa de Comunidad](mapa-de-comunidad.md#1-situación-e-intención) | [Formulario 1](../imagenes/form1.jpeg) |
-| 2 | Reto 2 · Círculo generador y mapa | Equipo Grupo 4 (4 de octubre) | Había que definir quiénes formaban la comunidad y qué aportaban cada uno | Completamos participantes actuales, posibles participantes y capacidades | [Mapa de Comunidad](mapa-de-comunidad.md#3-comunidad) | [Formulario 1](../imagenes/form1.jpeg) |
-| 3 | Reto 3 · Experiencia continuable | Equipo Grupo 4 (10 y 15 de octubre) | La app debía pulirse y otra persona tenía que poder usarla sin que estuviéramos nosotros | Salieron el prototipo con nombre `visualnoteia`, el despliegue en dominio y la guía de uso | [Guía rápida](../recursos/guia-de-uso-rapida.md) | [Formulario 2](../imagenes/form2.jpeg) |
-| 4 | Reto 4 · Show & Tell | Usuarios de prueba y equipo (16 de octubre) | La salida visual costaba leer y faltaba una mejor presentación de los resultados | Priorizamos la mejora visual, más mapas y el resumen en PDF | [Bitácora](bitacora.md#activación-9) | [Formulario 2](../imagenes/form2.jpeg) |
-| 5 | Reto 5 · Exploradores a colaboradores | Usuarios externos y equipo (20 de octubre) | Faltaba una escalera clara para pasar de probar la app a colaborar | Ajustamos la lógica de contribución siguiendo el plan de sostenibilidad | [CONTRIBUTING.md](../CONTRIBUTING.md#escalera-de-participación) | [Formulario 3](../imagenes/form3.jpeg) |
-| 6 | Reto 6 · De mi proyecto a nuestra comunidad | Equipo Grupo 4 (29 de octubre al 5 de noviembre) | Había que revisar otros repositorios y definir el MD para colaborar con ideasense | Reunimos la documentación en `docs/`, `recursos/` e `imagenes/` y la enlazamos desde el README | [README](../README.md#🌱-comunidad-de-práctica-y-proyecto-final) | [Formulario 3](../imagenes/form3.jpeg) |
-| 7 | Semanas 7 y 8 · Observar y evaluar | Equipo Grupo 4 (14 y 19 de noviembre) | Faltaba recuperar los recursos de las entregas anteriores y ordenar toda la información | Armamos el proyecto final y lo subimos al repositorio con bitácora, entregas, recursos e imágenes | [Bitácora](bitacora.md#activación-10), [README](../README.md) | [Formulario 3](../imagenes/form3.jpeg) |
+| # | Momento | Quién comentó | Qué dijo / qué se observó | Qué ajustamos | Dónde se ve el cambio |
+|---|---|---|---|---|---|
+| 1 | Reto 1 · Imaginar el cambio | Equipo y compañeros de clase (1 de octubre) | Hacía falta una herramienta para organizar los apuntes de clase | Definimos el dominio y la intención del proyecto | [Mapa de Comunidad](mapa-de-comunidad.md#1-situación-e-intención) |
+| 2 | Reto 2 · Círculo generador y mapa | Equipo Grupo 4 (4 de octubre) | Había que definir quiénes formaban la comunidad y qué aportaban cada uno | Completamos participantes actuales, posibles participantes y capacidades | [Mapa de Comunidad](mapa-de-comunidad.md#3-comunidad) |
+| 3 | Reto 3 · Experiencia continuable | Equipo Grupo 4 (10 y 15 de octubre) | La app debía pulirse y otra persona tenía que poder usarla sin que estuviéramos nosotros | Salieron el prototipo con nombre `visualnoteia`, el despliegue en dominio y la guía de uso | [Guía rápida](../recursos/guia-de-uso-rapida.md) |
+| 4 | Reto 4 · Show & Tell | Usuarios de prueba y equipo (16 de octubre) | La salida visual costaba leer y faltaba una mejor presentación de los resultados | Priorizamos la mejora visual, más mapas y el resumen en PDF | [Bitácora](bitacora.md#activación-9) |
+| 5 | Reto 5 · Exploradores a colaboradores | Usuarios externos y equipo (20 de octubre) | Faltaba una escalera clara para pasar de probar la app a colaborar | Ajustamos la lógica de contribución siguiendo el plan de sostenibilidad | [CONTRIBUTING.md](../CONTRIBUTING.md#escalera-de-participación) |
+| 6 | Reto 6 · De mi proyecto a nuestra comunidad | Equipo Grupo 4 (29 de octubre al 5 de noviembre) | Había que revisar otros repositorios y definir el MD para colaborar con ideasense | Reunimos la documentación en `docs/`, `recursos/` e `imagenes/` y la enlazamos desde el README | [README](../README.md#🌱-comunidad-de-práctica-y-proyecto-final) |
+| 7 | Semanas 7 y 8 · Observar y evaluar | Equipo Grupo 4 (14 y 19 de noviembre) | Faltaba recuperar los recursos de las entregas anteriores y ordenar toda la información | Armamos el proyecto final y lo subimos al repositorio con bitácora, entregas, recursos e imágenes | [Bitácora](bitacora.md#activación-10), [README](../README.md) |
 
 ## Evidencia visual
 
-| Imagen | Archivo | Se usa en |
-|---|---|---|
-| ![Formulario 1](../imagenes/form1.jpeg) | `imagenes/form1.jpeg` | Filas 1 y 2 (Reto 1 y Reto 2) |
-| ![Formulario 2](../imagenes/form2.jpeg) | `imagenes/form2.jpeg` | Filas 3 y 4 (Reto 3 y Reto 4) |
-| ![Formulario 3](../imagenes/form3.jpeg) | `imagenes/form3.jpeg` | Filas 5, 6 y 7 (Reto 5, Reto 6 y semanas 7 y 8) |
+![Sugerencias de la comunidad](../imagenes/retroalimentacion-sugerencias.png)
+
+La imagen reúne las sugerencias de las sesiones y el lugar donde quedaron registradas: la mejora visual, más mapas, el resumen en PDF, la escalera de participación, el MD para ideasense y la organización del proyecto final.
 
 ## Cómo registramos un cambio
 

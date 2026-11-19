@@ -56,9 +56,7 @@ visualnotesia/
 | ![Prototipo 1](imagenes/Prototipo1.png) | `imagenes/Prototipo1.png` — primera versión (2026-10-01) |
 | ![Prototipo 2](imagenes/Prototipo2.png) | `imagenes/Prototipo2.png` — segunda versión (2026-10-15) |
 | ![Prototipo 3](imagenes/Prototipo3.png) | `imagenes/Prototipo3.png` — tercera versión (2026-10-29) |
-| ![Formulario 1](imagenes/form1.jpeg) | `imagenes/form1.jpeg` — evidencia de retroalimentación |
-| ![Formulario 2](imagenes/form2.jpeg) | `imagenes/form2.jpeg` — evidencia de retroalimentación |
-| ![Formulario 3](imagenes/form3.jpeg) | `imagenes/form3.jpeg` — evidencia de retroalimentación |
+| ![Sugerencias de la comunidad](imagenes/retroalimentacion-sugerencias.png) | `imagenes/retroalimentacion-sugerencias.png` — [retroalimentación](docs/retroalimentacion.md) |
 | ![Imagen 1](imagenes/recurso1.png) | `imagenes/recurso1.png` |
 | ![Imagen 2](imagenes/recurso2.png) | `imagenes/recurso2.png` |
 
