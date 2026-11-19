@@ -10,6 +10,17 @@
 - 🎨 Aportar diseño o experiencia de usuario.
 - 💻 Enviar código mediante **Pull Requests**.
 
+## Escalera de participación
+
+| Nivel | Cómo entrar | Cómo avanzar |
+|---|---|---|
+| 1. Observador | Leer el [README](README.md) y los [recursos](recursos/) | Entender el propósito y probar la aplicación |
+| 2. Probador | Ejecutar la app con la [guía rápida](recursos/guia-de-uso-rapida.md) y generar un kit | Contar qué funcionó y qué no en un Issue |
+| 3. Colaborador | Abrir un Issue con un error o enviar un PR con un recurso o mejora | Que otro miembro revise y acepte el PR |
+| 4. Facilitador | Dar la bienvenida, revisar PRs y coordinar una sesión | Rotar según el [plan de sostenibilidad](docs/plan-de-sostenibilidad.md#responsabilidades-compartidas) |
+
+No hace falta permiso especial ni pasar los niveles en orden: cada nivel tiene una acción mínima y visible en GitHub.
+
 ## Flujo de trabajo (Git)
 
 1. Haz un **fork** del repositorio.

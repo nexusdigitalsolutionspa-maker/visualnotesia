@@ -7,6 +7,32 @@ Plataforma web universitaria que convierte **audios de clase**, **fotos de pizar
 
 ---
 
+## 🌱 Nuestra comunidad de práctica
+
+VisualNotes AI también es una comunidad de práctica: producimos, revisamos y compartimos kits de estudio para que otra persona pueda continuarlos sin nosotros. Para empezar, sigue la [guía rápida](recursos/guia-de-uso-rapida.md) y la [escalera de participación](CONTRIBUTING.md#escalera-de-participación).
+
+| Documento | Qué contiene |
+|---|---|
+| [Mapa de Comunidad](docs/mapa-de-comunidad.md) | Entrega 1 · dominio, participantes, trayectorias y rituales |
+| [Recursos reutilizables](recursos/) | Entrega 2 · guía rápida y plantilla de kit de estudio |
+| [Plan de evolución y sostenibilidad](docs/plan-de-sostenibilidad.md) | Entrega 3 · rotación de roles y continuidad |
+| [Bitácora de activación](docs/bitacora.md) | Evidencia real de las activaciones |
+| [Retroalimentación](docs/retroalimentacion.md) | Comentarios recibidos y cambios aplicados |
+| [Uso de IA](docs/uso-de-ia.md) | Ideas propias, sugerencias de IA y decisiones del equipo |
+
+### Equipo y roles
+
+| Rol | Persona | Responsabilidad |
+|---|---|---|
+| Facilitación | `[completar]` | Coordinar sesiones y dar la bienvenida |
+| Documentación | `[completar]` | Bitácora y recursos |
+| Código e IA | `[completar]` | Backend, integración con Gemini y despliegue |
+| Revisión | `[completar]` | Revisar PRs y observar las señales de comunidad |
+
+> Completar los nombres solo con autorización de cada persona. La rotación de roles está en el [plan de sostenibilidad](docs/plan-de-sostenibilidad.md#responsabilidades-compartidas).
+
+---
+
 ## 📚 Qué genera
 
 A partir de una sola fuente (audio, imagen o texto):
@@ -54,6 +80,8 @@ A partir de una sola fuente (audio, imagen o texto):
 │   ├── css/style.css
 │   └── js/ (app.js, audio.js, diagram.js, auth.js)
 ├── marketing/                 # Scripts de capturas para el video
+├── docs/                      # Mapa, bitácora, sostenibilidad, retroalimentación e IA
+├── recursos/                  # Guía rápida y plantilla de kit de estudio
 ├── Dockerfile
 ├── docker-compose.yml
 ├── render.yaml
