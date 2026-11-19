@@ -39,14 +39,13 @@ visualnotesia/
 |---|---|
 | [Entrega 1 · Mapa de Comunidad](docs/mapa-de-comunidad.md) | Dominio, intención, participantes, trayectorias de participación, rituales y espacios |
 | [Entrega 2 · Recursos reutilizables](recursos/) | Recursos con origen, usables sin el equipo y enlazados desde el README |
-| [Entrega 3 · Plan de evolución y sostenibilidad](docs/plan-de-sostenibilidad.md) | Responsabilidades compartidas, próximos rituales, bienvenida, señales reales y continuidad |
+| [Entrega 3 · Plan de evolución y sostenibilidad](docs/plan-de-sostenibilidad.md) | Documento `Entrega-3.md`: cómo ejecutar, comprobar y continuar VisualNotes AI |
 | [Bitácora de activación](docs/bitacora.md) | Activación ejecutada o ensayada, evidencias y ajustes |
 | [Retroalimentación](docs/retroalimentacion.md) | Quién comentó, qué dijo, qué ajustamos y dónde se ve el cambio |
 | [Uso de IA](docs/uso-de-ia.md) | Ideas propias, sugerencias de la IA y decisiones del equipo |
 
 #### Recursos de la Entrega 2
 
-- [Cómo ejecutar y continuar VisualNotes AI](recursos/como-ejecutar-y-continuar-visualnotes-ai.md) — recurso del Grupo 4: cómo levantar la app, comprobar el resultado y contribuir.
 - [Guía rápida: de una clase a un kit de estudio](recursos/guia-de-uso-rapida.md) — origen: experiencia de una persona nueva que no sabía por dónde empezar.
 - [Plantilla de kit de estudio](recursos/plantilla-kit-de-estudio.md) — origen: falta de un formato común al compartir los resultados de Gemini.
 
@@ -70,7 +69,7 @@ Cesar Adrian Villamil Alzamora · Said Enrique Mendoza Acevedo · Alice Alexandr
 | Código e IA | `[completar]` | Backend, integración con Gemini y despliegue |
 | Revisión | `[completar]` | Revisar PRs y observar las señales de comunidad |
 
-> La rotación de roles está en el [plan de sostenibilidad](docs/plan-de-sostenibilidad.md#responsabilidades-compartidas).
+> El plan de sostenibilidad es [Entrega-3.md](docs/plan-de-sostenibilidad.md).
 
 ---
 

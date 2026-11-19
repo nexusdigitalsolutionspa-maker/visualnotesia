@@ -7,7 +7,7 @@
 |---|---|---|---|---|---|
 | 1 | Reto 1 · Imaginar el cambio | `[completar]` | `[completar]` | `[completar]` | [Mapa de Comunidad](mapa-de-comunidad.md) |
 | 2 | Reto 2 · Círculo generador y mapa | `[completar]` | `[completar]` | `[completar]` | [Mapa de Comunidad](mapa-de-comunidad.md#3-comunidad) |
-| 3 | Reto 3 · Experiencia continuable | `[completar]` | `[completar]` | `[completar]` | [Cómo ejecutar y continuar VisualNotes AI](../recursos/como-ejecutar-y-continuar-visualnotes-ai.md) |
+| 3 | Reto 3 · Experiencia continuable | `[completar]` | `[completar]` | `[completar]` | [Guía rápida](../recursos/guia-de-uso-rapida.md) |
 | 4 | Reto 4 · Show & Tell | `[completar]` | `[completar]` | `[completar]` | [Bitácora](bitacora.md) |
 | 5 | Reto 5 · Exploradores a colaboradores | `[completar]` | `[completar]` | `[completar]` | [CONTRIBUTING.md](../CONTRIBUTING.md#escalera-de-participación) |
 | 6 | Reto 6 · De mi proyecto a nuestra comunidad | `[completar]` | `[completar]` | `[completar]` | [README](../README.md), [CONTRIBUTING.md](../CONTRIBUTING.md) |
